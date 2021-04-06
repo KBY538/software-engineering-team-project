@@ -10,7 +10,7 @@
 
 ## 프로토타입
 
-https://ovenapp.io/view/ZZmJJd9HekOMtta6OzJ7zzFlWeKBFnwN/
+https://ovenapp.io/view/ZZmJJd9HekOMtta6OzJ7z☆zFlWeKBFnwN/
 
 ## 트렐로
 
