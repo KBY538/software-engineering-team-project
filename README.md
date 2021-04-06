@@ -12,6 +12,10 @@
 
 https://ovenapp.io/view/ZZmJJd9HekOMtta6OzJ7zzFlWeKBFnwN/
 
+## 트렐로
+
+https://trello.com/b/gE5TVvI8/%EC%BA%A0%ED%95%91%EC%9E%A5-%EC%98%88%EC%95%BD-%EA%B4%80%EB%A6%AC-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8
+
 ## 프로젝트 공지사항 링크
 
 https://github.com/SMU-EB0055/SE2021_HAEA0008_2
