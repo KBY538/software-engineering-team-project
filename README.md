@@ -18,7 +18,7 @@ https://github.com/SMU-EB0055/SE2021_HAEA0008_2
 
 ## 산출물 업데이트
 
-### 요구사항 명세서[latest](https://github.com/KBY538/software-engineering-team-project/blob/main/%EB%AA%85%EC%84%B8%EC%84%9C/docx/%EB%8F%85%EA%B0%95%EC%A1%B0_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD_%EB%AA%85%EC%84%B8%EC%84%9C_v1.09.docx)
+### 요구사항 명세서 [latest](https://github.com/KBY538/software-engineering-team-project/blob/main/%EB%AA%85%EC%84%B8%EC%84%9C/docx/%EB%8F%85%EA%B0%95%EC%A1%B0_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD_%EB%AA%85%EC%84%B8%EC%84%9C_v1.09.docx)
 (2021/04/09)	[v1.01](https://github.com/KBY538/software-engineering-team-project/blob/main/%EB%AA%85%EC%84%B8%EC%84%9C/docx/%EB%8F%85%EA%B0%95%EC%A1%B0_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD_%EB%AA%85%EC%84%B8%EC%84%9C_v1.01.docx)	/초안	/길민호, 김부용, 김채민, 이하임  
 (2021/04/14)	[v1.02](https://github.com/KBY538/software-engineering-team-project/blob/main/%EB%AA%85%EC%84%B8%EC%84%9C/docx/%EB%8F%85%EA%B0%95%EC%A1%B0_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD_%EB%AA%85%EC%84%B8%EC%84%9C_v1.02.docx)	/유스케이스 기술 시나리오, 화면기술 추가	/길민호, 김부용, 김채민, 이하임  
 (2021/04/15)	[v1.03](https://github.com/KBY538/software-engineering-team-project/blob/main/%EB%AA%85%EC%84%B8%EC%84%9C/docx/%EB%8F%85%EA%B0%95%EC%A1%B0_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD_%EB%AA%85%EC%84%B8%EC%84%9C_v1.03.docx)	/대안, 예외 흐름, 사후조건 수정(21-40)	/이하임  
@@ -29,7 +29,7 @@ https://github.com/SMU-EB0055/SE2021_HAEA0008_2
 (2021/04/19)	[v1.08](https://github.com/KBY538/software-engineering-team-project/blob/main/%EB%AA%85%EC%84%B8%EC%84%9C/docx/%EB%8F%85%EA%B0%95%EC%A1%B0_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD_%EB%AA%85%EC%84%B8%EC%84%9C_v1.08.docx)	/유스케이스 다이어그램 수정	/이하임  
 (2021/04/25)  [v1.09](https://github.com/KBY538/software-engineering-team-project/blob/main/%EB%AA%85%EC%84%B8%EC%84%9C/docx/%EB%8F%85%EA%B0%95%EC%A1%B0_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD_%EB%AA%85%EC%84%B8%EC%84%9C_v1.09.docx) /고객기능 요구사항 두 항목 축소 /김부용  
 
-### 프로젝트 계획서[latest](https://github.com/KBY538/software-engineering-team-project/blob/main/%EA%B3%84%ED%9A%8D%EC%84%9C/%EB%8F%85%EA%B0%95%EC%A1%B0_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EA%B3%84%ED%9A%8D%EC%84%9C_v1.02.doc)
+### 프로젝트 계획서 [latest](https://github.com/KBY538/software-engineering-team-project/blob/main/%EA%B3%84%ED%9A%8D%EC%84%9C/%EB%8F%85%EA%B0%95%EC%A1%B0_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EA%B3%84%ED%9A%8D%EC%84%9C_v1.02.doc)
 (2021/04/16)	[v1.01](https://github.com/KBY538/software-engineering-team-project/blob/main/%EA%B3%84%ED%9A%8D%EC%84%9C/%EB%8F%85%EA%B0%95%EC%A1%B0_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EA%B3%84%ED%9A%8D%EC%84%9C_v1.01.doc)	/초안	/길민호, 김부용, 김채민, 이하임  
 (2021/04/19)  v1.01 /깃허브 업로드  
 (2021/04/25)  [v1.02](https://github.com/KBY538/software-engineering-team-project/blob/main/%EA%B3%84%ED%9A%8D%EC%84%9C/%EB%8F%85%EA%B0%95%EC%A1%B0_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EA%B3%84%ED%9A%8D%EC%84%9C_v1.02.doc) /도구 추가 /김부용  
