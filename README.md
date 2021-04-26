@@ -2,7 +2,7 @@
 
 ## 프로젝트 중간 발표 영상
 
-{% include midtermPresentation.html id="iBx3UvAEdZk" %}  
+{% include midtermPresentation.html id="https://www.youtube.com/watch?v=iBx3UvAEdZk" %}  
 (업로드 테스트 중입니다)
 [자료](https://github.com/KBY538/software-engineering-team-project/blob/main/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%A4%91%EA%B0%84%EB%B0%9C%ED%91%9C/%EB%8F%85%EA%B0%95%EC%A1%B0_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%A4%91%EA%B0%84%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C.pdf)
 
