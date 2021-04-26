@@ -2,6 +2,7 @@
 
 ## 프로젝트 중간 발표 영상
 
+영상 링크  
 [![SE_210426_프로젝트_중간발표_독강조](http://img.youtube.com/vi/_Q5G6vFTL-M/0.jpg)](https://www.youtube.com/watch?v=_Q5G6vFTL-M?t=0s) 
 (<-클릭해주세요)  
 [프로젝트 중간 발표 자료](https://github.com/KBY538/software-engineering-team-project/blob/main/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%A4%91%EA%B0%84%EB%B0%9C%ED%91%9C/%EB%8F%85%EA%B0%95%EC%A1%B0_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%A4%91%EA%B0%84%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C.pdf)
