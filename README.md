@@ -36,6 +36,14 @@ https://github.com/SMU-EB0055/SE2021_HAEA0008_2
 (2021/04/19)	[v1.08](https://github.com/KBY538/software-engineering-team-project/blob/main/%EB%AA%85%EC%84%B8%EC%84%9C/docx/%EB%8F%85%EA%B0%95%EC%A1%B0_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD_%EB%AA%85%EC%84%B8%EC%84%9C_v1.08.docx)	/유스케이스 다이어그램 수정	/이하임  
 (2021/04/25)  [v1.09](https://github.com/KBY538/software-engineering-team-project/blob/main/%EB%AA%85%EC%84%B8%EC%84%9C/docx/%EB%8F%85%EA%B0%95%EC%A1%B0_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD_%EB%AA%85%EC%84%B8%EC%84%9C_v1.09.docx) /고객기능 요구사항 두 항목 축소 /김부용  
 
+(2021/05/25)  [v1.10](https://github.com/KBY538/software-engineering-team-project/blob/main/%EB%AA%85%EC%84%B8%EC%84%9C/docx/%EB%8F%85%EA%B0%95%EC%A1%B0_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD_%EB%AA%85%EC%84%B8%EC%84%9C_v1.10.docx) /유스케이스 40~61에서 일부 항목(조회, FAQ관련) 제거, 목차 업데이트는 나중에 일괄 수정 예정 /김부용  
+
+(2021/05/28)  [v1.11](https://github.com/KBY538/software-engineering-team-project/blob/main/%EB%AA%85%EC%84%B8%EC%84%9C/docx/%EB%8F%85%EA%B0%95%EC%A1%B0_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD_%EB%AA%85%EC%84%B8%EC%84%9C_v1.11.docx) /유스케이스 일부 항목 제거 /김부용  
+
+(2021/05/29)  [v1.12](https://github.com/KBY538/software-engineering-team-project/blob/main/%EB%AA%85%EC%84%B8%EC%84%9C/docx/%EB%8F%85%EA%B0%95%EC%A1%B0_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD_%EB%AA%85%EC%84%B8%EC%84%9C_v1.12.docx) /2.2 액터 다이어그램: 사용되지 않은 액터 API 제거 & 
+3.2 유스케이스 목록: 유스케이스간 통합, 기능 제거로 최종 46항목으로 축소 및 정렬 기준을 액터 중심에서 기능 유사도로 변경 & 
+3.3 사용자 인터페이스 요구사항 수정: 유스케이스 수정에 맞춰 수정, ID 부과 방식 변경(마이페이지 화면인 경우 액터를 나타내는 문자+MY로 식별자 시작), 목차 정리 /김부용  
+
 ### 프로젝트 계획서 [latest](https://github.com/KBY538/software-engineering-team-project/blob/main/%EA%B3%84%ED%9A%8D%EC%84%9C/%EB%8F%85%EA%B0%95%EC%A1%B0_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EA%B3%84%ED%9A%8D%EC%84%9C_v1.02.doc)
 (2021/04/16)	[v1.01](https://github.com/KBY538/software-engineering-team-project/blob/main/%EA%B3%84%ED%9A%8D%EC%84%9C/%EB%8F%85%EA%B0%95%EC%A1%B0_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EA%B3%84%ED%9A%8D%EC%84%9C_v1.01.doc)	/초안	/길민호, 김부용, 김채민, 이하임  
 (2021/04/19)  v1.01 /깃허브 업로드  
