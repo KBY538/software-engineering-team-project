@@ -35,11 +35,8 @@ https://github.com/SMU-EB0055/SE2021_HAEA0008_2
 (2021/04/19)	[v1.07](https://github.com/KBY538/software-engineering-team-project/blob/main/%EB%AA%85%EC%84%B8%EC%84%9C/docx/%EB%8F%85%EA%B0%95%EC%A1%B0_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD_%EB%AA%85%EC%84%B8%EC%84%9C_v1.07.docx)	/회원가입 유스케이스 기술의 결과 화면 수정 (메인 화면 -> 로그인 화면), 3.2.2.14 정보 조회 -> 정보 확인, 3.2.2.15 사전 조건 수정, 3.2.2.17 A02 제거, 3.2.2.23 조건 확인 -> 적용을 실행, A01 조건 수정, 3.2.2.25 날씨API 액터 제거, 3.2.2.1에 날씨 API 추가, 3.2.2.25 사전 조건 수정, 3.2.2.27, 3.2.2.27 B01예약 요청 목록 -> 예약 관리, 3.2.2.2.66, 3.2.2.256 정상, 대안흐름,시나리오 수정, CA003 중복 -> CA002, CA003으로 수정	/길민호  
 (2021/04/19)	[v1.08](https://github.com/KBY538/software-engineering-team-project/blob/main/%EB%AA%85%EC%84%B8%EC%84%9C/docx/%EB%8F%85%EA%B0%95%EC%A1%B0_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD_%EB%AA%85%EC%84%B8%EC%84%9C_v1.08.docx)	/유스케이스 다이어그램 수정	/이하임  
 (2021/04/25)  [v1.09](https://github.com/KBY538/software-engineering-team-project/blob/main/%EB%AA%85%EC%84%B8%EC%84%9C/docx/%EB%8F%85%EA%B0%95%EC%A1%B0_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD_%EB%AA%85%EC%84%B8%EC%84%9C_v1.09.docx) /고객기능 요구사항 두 항목 축소 /김부용  
-
 (2021/05/25)  [v1.10](https://github.com/KBY538/software-engineering-team-project/blob/main/%EB%AA%85%EC%84%B8%EC%84%9C/docx/%EB%8F%85%EA%B0%95%EC%A1%B0_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD_%EB%AA%85%EC%84%B8%EC%84%9C_v1.10.docx) /유스케이스 40~61에서 일부 항목(조회, FAQ관련) 제거, 목차 업데이트는 나중에 일괄 수정 예정 /김부용  
-
 (2021/05/28)  [v1.11](https://github.com/KBY538/software-engineering-team-project/blob/main/%EB%AA%85%EC%84%B8%EC%84%9C/docx/%EB%8F%85%EA%B0%95%EC%A1%B0_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD_%EB%AA%85%EC%84%B8%EC%84%9C_v1.11.docx) /유스케이스 일부 항목 제거 /김부용  
-
 (2021/05/29)  [v1.12](https://github.com/KBY538/software-engineering-team-project/blob/main/%EB%AA%85%EC%84%B8%EC%84%9C/docx/%EB%8F%85%EA%B0%95%EC%A1%B0_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD_%EB%AA%85%EC%84%B8%EC%84%9C_v1.12.docx) /2.2 액터 다이어그램: 사용되지 않은 액터 API 제거 & 
 3.2 유스케이스 목록: 유스케이스간 통합, 기능 제거로 최종 46항목으로 축소 및 정렬 기준을 액터 중심에서 기능 유사도로 변경 & 
 3.3 사용자 인터페이스 요구사항 수정: 유스케이스 수정에 맞춰 수정, ID 부과 방식 변경(마이페이지 화면인 경우 액터를 나타내는 문자+MY로 식별자 시작), 목차 정리 /김부용  
