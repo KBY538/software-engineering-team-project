@@ -53,3 +53,5 @@ https://github.com/SMU-EB0055/SE2021_HAEA0008_2
 (2021/05/31)  [v2.01](https://github.com/KBY538/software-engineering-team-project/blob/main/%EA%B3%84%ED%9A%8D%EC%84%9C/%EB%8F%85%EA%B0%95%EC%A1%B0_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EA%B3%84%ED%9A%8D%EC%84%9C_v2.01.doc) /중간고사 및 다른 과목의 팀 프로젝트와 과제로 인한 일정 17일 지연에 따른 계획 수정 &
  산출물 별 세부 관리 계획에 클래스 설계서 항목 추가 /김부용  
 
+### 클래스 설계서 [latest](https://github.com/KBY538/software-engineering-team-project/blob/main/%EC%84%A4%EA%B3%84%EC%84%9C/%EB%8F%85%EA%B0%95%EC%A1%B0_Class%20Design_v1.01/%EB%8F%85%EA%B0%95%EC%A1%B0_Class%20Design_v1.01.pdf)
+(2021/05/31) [v1.01](https://github.com/KBY538/software-engineering-team-project/blob/main/%EC%84%A4%EA%B3%84%EC%84%9C/%EB%8F%85%EA%B0%95%EC%A1%B0_Class%20Design_v1.01/%EB%8F%85%EA%B0%95%EC%A1%B0_Class%20Design_v1.01.pdf)	/초안	/길민호, 김부용, 김채민, 이하임  
