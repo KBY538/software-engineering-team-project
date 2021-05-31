@@ -25,7 +25,7 @@ https://github.com/SMU-EB0055/SE2021_HAEA0008_2
 
 ## 산출물 업데이트
 
-### 요구사항 명세서 [latest](https://github.com/KBY538/software-engineering-team-project/blob/main/%EB%AA%85%EC%84%B8%EC%84%9C/docx/%EB%8F%85%EA%B0%95%EC%A1%B0_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD_%EB%AA%85%EC%84%B8%EC%84%9C_v1.12.docx)
+### 요구사항 명세서 [latest](https://github.com/KBY538/software-engineering-team-project/blob/main/%EB%AA%85%EC%84%B8%EC%84%9C/docx/%EB%8F%85%EA%B0%95%EC%A1%B0_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD_%EB%AA%85%EC%84%B8%EC%84%9C_v2.01.docx)
 (2021/04/09)	[v1.01](https://github.com/KBY538/software-engineering-team-project/blob/main/%EB%AA%85%EC%84%B8%EC%84%9C/docx/%EB%8F%85%EA%B0%95%EC%A1%B0_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD_%EB%AA%85%EC%84%B8%EC%84%9C_v1.01.docx)	/초안	/길민호, 김부용, 김채민, 이하임  
 (2021/04/14)	[v1.02](https://github.com/KBY538/software-engineering-team-project/blob/main/%EB%AA%85%EC%84%B8%EC%84%9C/docx/%EB%8F%85%EA%B0%95%EC%A1%B0_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD_%EB%AA%85%EC%84%B8%EC%84%9C_v1.02.docx)	/유스케이스 기술 시나리오, 화면기술 추가	/길민호, 김부용, 김채민, 이하임  
 (2021/04/15)	[v1.03](https://github.com/KBY538/software-engineering-team-project/blob/main/%EB%AA%85%EC%84%B8%EC%84%9C/docx/%EB%8F%85%EA%B0%95%EC%A1%B0_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD_%EB%AA%85%EC%84%B8%EC%84%9C_v1.03.docx)	/대안, 예외 흐름, 사후조건 수정(21-40)	/이하임  
@@ -40,8 +40,16 @@ https://github.com/SMU-EB0055/SE2021_HAEA0008_2
 (2021/05/29)  [v1.12](https://github.com/KBY538/software-engineering-team-project/blob/main/%EB%AA%85%EC%84%B8%EC%84%9C/docx/%EB%8F%85%EA%B0%95%EC%A1%B0_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD_%EB%AA%85%EC%84%B8%EC%84%9C_v1.12.docx) /2.2 액터 다이어그램: 사용되지 않은 액터 API 제거 & 
 3.2 유스케이스 목록: 유스케이스간 통합, 기능 제거로 최종 46항목으로 축소 및 정렬 기준을 액터 중심에서 기능 유사도로 변경 & 
 3.3 사용자 인터페이스 요구사항 수정: 유스케이스 수정에 맞춰 수정, ID 부과 방식 변경(마이페이지 화면인 경우 액터를 나타내는 문자+MY로 식별자 시작), 목차 정리 /김부용  
+(2021/05/31)  [v2.01](https://github.com/KBY538/software-engineering-team-project/blob/main/%EB%AA%85%EC%84%B8%EC%84%9C/docx/%EB%8F%85%EA%B0%95%EC%A1%B0_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD_%EB%AA%85%EC%84%B8%EC%84%9C_v2.01.docx) /변경 이력 수정 & 
+2. 사용자 분석: 날씨 API, SMS API 제거 & 
+3. 요구사항 분석: 아이디 찾기, 새 비밀번호 설정 제거, 유스케이스 다이어그램 수정, 제거된 API 관련 내용 수정, 아이디 찾기, 새 비밀번호 설정 관련 화면 기술 제거, 게시글 이미지 관련 기능 제거 & 
+4. 비기능 요구사항: 비밀번호 찾기 제거
+ /김부용 
 
-### 프로젝트 계획서 [latest](https://github.com/KBY538/software-engineering-team-project/blob/main/%EA%B3%84%ED%9A%8D%EC%84%9C/%EB%8F%85%EA%B0%95%EC%A1%B0_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EA%B3%84%ED%9A%8D%EC%84%9C_v1.02.doc)
+### 프로젝트 계획서 [latest](https://github.com/KBY538/software-engineering-team-project/blob/main/%EA%B3%84%ED%9A%8D%EC%84%9C/%EB%8F%85%EA%B0%95%EC%A1%B0_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EA%B3%84%ED%9A%8D%EC%84%9C_v2.01.doc)
 (2021/04/16)	[v1.01](https://github.com/KBY538/software-engineering-team-project/blob/main/%EA%B3%84%ED%9A%8D%EC%84%9C/%EB%8F%85%EA%B0%95%EC%A1%B0_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EA%B3%84%ED%9A%8D%EC%84%9C_v1.01.doc)	/초안	/길민호, 김부용, 김채민, 이하임  
 (2021/04/19)  v1.01 /깃허브 업로드  
 (2021/04/25)  [v1.02](https://github.com/KBY538/software-engineering-team-project/blob/main/%EA%B3%84%ED%9A%8D%EC%84%9C/%EB%8F%85%EA%B0%95%EC%A1%B0_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EA%B3%84%ED%9A%8D%EC%84%9C_v1.02.doc) /도구 추가 /김부용  
+(2021/05/31)  [v2.01](https://github.com/KBY538/software-engineering-team-project/blob/main/%EA%B3%84%ED%9A%8D%EC%84%9C/%EB%8F%85%EA%B0%95%EC%A1%B0_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EA%B3%84%ED%9A%8D%EC%84%9C_v2.01.doc) /중간고사 및 다른 과목의 팀 프로젝트와 과제로 인한 일정 17일 지연에 따른 계획 수정 &
+ 산출물 별 세부 관리 계획에 클래스 설계서 항목 추가 /김부용  
+
