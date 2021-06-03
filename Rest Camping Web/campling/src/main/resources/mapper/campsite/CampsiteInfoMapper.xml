@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.smu.camping.mapper.campsite.CampsiteInfoMapper">
+    <select id = "getCampsiteInfoByFilter" resultType="com.smu.camping.dto.campsite.CampsiteDto" parameterType="com.smu.camping.dto.campsite.SearchFilterDto">
+        SELECT camp.id, camp.owner, camp.name, camp.address, camp.contact, camp.introduction
+        FROM campsite as camp
+            JOIN campsite_facility as camp_facility ON camp.id = camp_facility.campsite_id
+            JOIN facility on camp_facility.facility_id = facility.id
+    </select>
+
+    <select id = "getCampsiteOrderByReviewNum">
+
+    </select>
+
+    <select id = "getCampsiteCntOfOwner">
+
+    </select>
+
+    <select id = "getCampsiteInfoByCampsiteId">
+
+    </select>
+    <select id = "getCampsiteInfoByUserName">
+
+    </select>
+
+    <select id = "getAllCampsiteInfo">
+
+    </select>
+
+    <select id = "updateCampsiteInfo">
+
+    </select>
+
+    <select id = "createCampsiteInfo">
+
+    </select>
+</mapper>

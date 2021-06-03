@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.smu.camping.mapper.user.UserMapper">
+    <select id = "selectUserInfo" resultType="com.smu.camping.dto.user.CustomUserDetails">
+        SELECT name, login_id, login_pwd, create_date, modify_date, company_name
+        FROM user
+        WHERE login_id = #{loginId};
+    </select>
+
+    <select id = "selectUserRole" resultType="com.smu.camping.dto.user.UserRoleDto">
+        SELECT name, login_id, login_pwd, create_date, modify_date, company_name
+        FROM user
+        WHERE login_id = #{loginId};
+    </select>
+    <select id = "getUserInfoByUsername">
+
+    </select>
+
+    <select id = "getAllUserInfo">
+
+    </select>
+    <insert id="createUserInfo">
+
+    </insert>
+
+    <delete id="deleteUserInfo">
+
+    </delete>
+    <update id = "updateUserInfo">
+
+    </update>
+</mapper>
