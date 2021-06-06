@@ -7,7 +7,7 @@ import java.util.List;
 
 @Repository
 public interface UserRoleMapper {
-	public List<UserRoleDto> getUserRolesByUsername(String username);
-	public int createUserRole(UserRoleDto userRoleDto);
-	public int deleteUserRole(String username, String roleName);
+	 List<UserRoleDto> getUserRolesByUsername(String username);
+	 int createUserRole(UserRoleDto userRoleDto);
+	 int deleteUserRole(String username, String roleName);
 }

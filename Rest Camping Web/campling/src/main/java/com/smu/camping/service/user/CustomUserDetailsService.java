@@ -20,8 +20,8 @@ public class CustomUserDetailsService implements UserDetailsService {
 	UserService userService;
 
 	@Override
-	public UserDetails loadUserByUsername(String loginId) throws UsernameNotFoundException {
-		UserDto userDto = userService.getUserInfoByUsername(loginId);
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		UserDto userDto = userService.getUserInfoByUsername(username);
 
 		if(userDto == null){
 			throw new UsernameNotFoundException("사용자가 입력한 아이디에 해당하는 사용자를 찾을 수 없습니다.");
@@ -31,7 +31,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 		customUserDetails.setUsername(userDto.getUsername());
 		customUserDetails.setPassword(userDto.getPassword());
 
-		List<UserRoleDto> userRoleList = userService.getUserRolesByUsername(loginId);
+		List<UserRoleDto> userRoleList = userService.getUserRolesByUsername(username);
 
 		List<GrantedAuthority> authorities = new ArrayList<>();
 

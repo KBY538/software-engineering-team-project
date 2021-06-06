@@ -16,34 +16,13 @@
     <description>web application for camping</description>
 
     <properties>
+        <start-class>com.smu.camping.CampingApplication</start-class>
         <spring.version>5.2.2.RELEASE</spring.version>
         <poi.version>3.17</poi.version>
         <java.version>1.8</java.version>
     </properties>
 
     <dependencies>
-        <!-- selenium -->
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>3.141.59</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.coupang.marketplace</groupId>
-            <artifactId>marketplace-client-java-sdk</artifactId>
-            <version>1.0.16</version>
-            <exclusions>
-                <exclusion> <!-- slf4j의 StaticLoggerBinder.class와 logback-classic의 StaticLoggerBinder.class가 충돌하여 SLF4J: Class path contains multiple SLF4J bindings.에러가 발생해서 exclusion을 추가해줌 -->
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-simple</artifactId>
-                </exclusion>
-            </exclusions>
-
-            <!-- <scope>system</scope>
-            <systemPath>${project.basedir}/lib/com/coupang/marketplace/marketplace-client-java-sdk/1.0.16/marketplace-client-java-sdk-1.0.16.jar</systemPath>-->
-        </dependency>
-
         <!-- jstl -->
         <dependency>
             <groupId>jstl</groupId>
@@ -73,12 +52,6 @@
         </dependency>
 
         <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>1.4</version>
-        </dependency>
-
-        <dependency>
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>
             <version>1.2.1</version>
@@ -102,13 +75,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
         </dependency>
 
         <dependency>
