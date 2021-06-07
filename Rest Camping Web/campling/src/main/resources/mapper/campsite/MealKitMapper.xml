@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.smu.camping.mapper.campsite.MealKitMapper">
+    <insert id="createMealkit" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO mealkit(id, campsite_id, name, price, numRemains) VALUES (#{id}, #{campsiteId}, #{name}, #{price}, #{numRemains})
+    </insert>
+</mapper>

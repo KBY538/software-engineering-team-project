@@ -18,5 +18,5 @@ public class MealKitDto {
 
     private int numRemains;
 
-    private List<FileInfoDto> image;
+    private FileInfoDto image;
 }

@@ -8,7 +8,7 @@ import java.util.List;
 
 @Repository
 public interface MealKitMapper {
-	public int createMealkits(List<MealKitDto> MealKitDtos);
+	public int createMealkit(MealKitDto MealKitDto);
 	public int updateMealkits(List<MealKitDto> MealKitDtos);
 	public int deleteMealkit(int mealKitId);
 	public List<MealKitDto> getMealKitByCampsiteId(int campsiteId);

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.smu.camping.mapper.campsite.OperatingMapper">
+    <select id = "getCampsiteOperatingByCampsiteId" resultType="string">
+        SELECT * FROM campsite_operating WHERE campsite_id = #{campsiteId}
+    </select>
+
+    <insert id = "createCampsiteOperating" parameterType="java.util.List">
+        INSERT
+        INTO campsite_operating(campsite_id, type)
+        VALUES
+            <foreach collection="types" item="type" separator=",">
+                (#{campsiteId}, #{type})
+            </foreach>
+    </insert>
+</mapper>

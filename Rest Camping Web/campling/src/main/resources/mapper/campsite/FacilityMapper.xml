@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.smu.camping.mapper.campsite.FacilityMapper">
+    <select id = "getCampsiteFacilityByCampsiteId" resultType="string">
+        SELECT * FROM campsite_facility WHERE campsite_id = #{campsiteId}
+    </select>
+
+
+    <insert id = "createCampsiteFacility" parameterType="java.util.List">
+            INSERT
+            INTO campsite_facility(campsite_id, name)
+            VALUES
+            <foreach collection="facilityNames" item="facilityName" separator=", ">
+                   (#{campsiteId} , #{facilityName})
+            </foreach>
+    </insert>
+</mapper>

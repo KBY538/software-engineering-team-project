@@ -1,7 +1,7 @@
 package com.smu.camping.mapper.campsite;
 
 import com.smu.camping.dto.campsite.CampsiteDto;
-import com.sun.jndi.toolkit.dir.SearchFilter;
+import com.smu.camping.dto.campsite.SearchFilterDto;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -14,6 +14,6 @@ public interface CampsiteInfoMapper {
 	public CampsiteDto getCampsiteInfoByUserName(String owner);
 	public CampsiteDto getCampsiteInfoByCampsiteId(int CampsiteId);
 	public List<CampsiteDto> getCampsiteOrderByReviewNum();
-	public List<CampsiteDto> getCampsiteInfoByFilter(SearchFilter searchFilter);
+	public List<CampsiteDto> getCampsiteInfoByFilter(SearchFilterDto searchFilter);
 	public int getCampsiteCntOfOwner(String owner);
 }

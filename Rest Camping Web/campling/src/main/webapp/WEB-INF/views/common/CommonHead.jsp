@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <title>RestCamping</title>
 <link rel="icon" type="image/png" href="/images/favicon.ico">
 

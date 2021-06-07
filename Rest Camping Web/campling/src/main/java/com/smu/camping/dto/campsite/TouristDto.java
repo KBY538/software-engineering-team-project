@@ -18,5 +18,5 @@ public class TouristDto {
     private String desc;
     private String address;
 
-    private List<FileInfoDto> image;
+    private FileInfoDto image;
 }

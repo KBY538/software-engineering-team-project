@@ -12,7 +12,9 @@ import java.util.List;
 @AllArgsConstructor
 public class RoomDto {
     private int id;
+    private int campsiteId;
 
+    private String name;
     private int price;
     private int numRemains;
 
@@ -20,5 +22,5 @@ public class RoomDto {
     private int baseHeadCnt;
     private int baseNumCars;
 
-    private List<FileInfoDto> image;
+    private FileInfoDto image;
 }

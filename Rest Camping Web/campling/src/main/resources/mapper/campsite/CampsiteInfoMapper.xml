@@ -3,10 +3,7 @@
 
 <mapper namespace="com.smu.camping.mapper.campsite.CampsiteInfoMapper">
     <select id = "getCampsiteInfoByFilter" resultType="com.smu.camping.dto.campsite.CampsiteDto" parameterType="com.smu.camping.dto.campsite.SearchFilterDto">
-        SELECT camp.id, camp.owner, camp.name, camp.address, camp.contact, camp.introduction
-        FROM campsite as camp
-            JOIN campsite_facility as camp_facility ON camp.id = camp_facility.campsite_id
-            JOIN facility on camp_facility.facility_id = facility.id
+
     </select>
 
     <select id = "getCampsiteOrderByReviewNum">
@@ -18,21 +15,24 @@
     </select>
 
     <select id = "getCampsiteInfoByCampsiteId">
-
+        SELECT *
+        FROM campsite
+        WHERE id = #{id}
     </select>
+
     <select id = "getCampsiteInfoByUserName">
 
     </select>
 
     <select id = "getAllCampsiteInfo">
-
+        SELECT * FROM campsite
     </select>
 
     <select id = "updateCampsiteInfo">
 
     </select>
 
-    <select id = "createCampsiteInfo">
-
-    </select>
+    <insert id = "createCampsiteInfo" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO campsite(id, owner, address, name, contact, introduction) VALUES(#{id}, #{owner}, #{name}, #{address}, #{contact}, #{introduction})
+    </insert>
 </mapper>

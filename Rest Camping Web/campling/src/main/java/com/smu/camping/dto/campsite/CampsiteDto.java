@@ -2,7 +2,6 @@ package com.smu.camping.dto.campsite;
 
 import com.smu.camping.dto.file.FileInfoDto;
 import com.smu.camping.dto.post.review.ReviewDto;
-import com.smu.camping.dto.reservation.CampsiteReservationInfoDto;
 import lombok.*;
 
 import java.util.List;
@@ -14,16 +13,19 @@ import java.util.List;
 @AllArgsConstructor
 public class CampsiteDto {
     private int id;
-    
     private String owner;
+    private boolean isApprove;
+    private String name;
+    private String address;
+    private String contact;
     private String introduction;
     private String notice;
+    private int pricePerExcessPerson;
+    private int pricePerExcessCar;
 
-    private boolean isApprove;
+    private List<String> operatingTypes;
+    private List<String> facilities;
 
-    private CampsiteBaseInfoDto baseInfo;
-
-    private CampsiteReservationInfoDto reservationInfo;
     private List<RoomDto> rooms;
     private List<MealKitDto> mealKits;
 
@@ -32,5 +34,5 @@ public class CampsiteDto {
 
     private List<ReviewDto> reviews;
 
-    private List<FileInfoDto> image;
+    private FileInfoDto image;
 }

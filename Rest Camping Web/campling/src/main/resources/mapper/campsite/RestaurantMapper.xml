@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.smu.camping.mapper.campsite.RestaurantMapper">
+    <insert id="createRestaurant" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO restaurant_info(id, campsite_id, name, `desc`, address) VALUES (#{id}, #{campsiteId}, #{name}, #{desc}, #{address})
+    </insert>
+</mapper>

@@ -9,6 +9,6 @@ import lombok.*;
 @AllArgsConstructor
 
 public class ImageInfoDto {
-    private int field;
+    private int id;
     private int imageId;
 }

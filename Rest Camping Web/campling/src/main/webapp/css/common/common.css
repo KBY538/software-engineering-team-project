@@ -24,11 +24,35 @@ div.content-container{
 
 div.content{
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin-top: 130px;
-    margin-bottom: 50px;
+    margin : 130px 400px 50px 450px ;
 }
+
+div.content{
+    justify-content: normal ;
+}
+
+.label {
+    margin-top : 10px;
+    width : 100%;
+    text-align: center;
+    border-bottom: 1px solid grey;
+}
+
+.menu-bar{
+    width : 280px;
+    height : 500px;
+    border : #5a6674;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.main-content{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+}
+
 
 a{
     color : #007bff;

@@ -7,7 +7,7 @@ import java.util.List;
 
 @Repository
 public interface TouristMapper {
-	public int createTourists(List<TouristDto> touristDtos);
+	public int createTourist(TouristDto touristDto);
 	public int updateTourist(TouristDto touristDto);
 	public int deleteTourist(int touristId);
 	public TouristDto getTourist(int touristId);

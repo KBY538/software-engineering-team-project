@@ -13,5 +13,4 @@ public class FileInfoDto {
     private String username;
 
     private String filePath;
-    private String contentType;
 }

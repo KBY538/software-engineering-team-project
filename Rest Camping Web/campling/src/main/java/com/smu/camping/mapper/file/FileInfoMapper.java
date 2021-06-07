@@ -7,7 +7,7 @@ import java.util.List;
 
 @Repository
 public interface FileInfoMapper {
-	public int createFileInfos(List<FileInfoDto> fileInfoDtos);
+	public int createFileInfos(FileInfoDto fileInfoDtos);
 	public int deleteFileInfo(int fileId);
 	public FileInfoDto getFileInfo(int fileId);
 }

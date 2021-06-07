@@ -7,7 +7,7 @@ import java.util.List;
 
 @Repository
 public interface RestaurantMapper {
-	public int createRestaurants(List<RestaurantDto> restaurantDtos);
+	public int createRestaurant(RestaurantDto restaurantDto);
 	public int updateRestaurants(List<RestaurantDto> restaurantDtos);
 	public int deleteRestaurant(int restaurantId);
 	public RestaurantDto getRestaurant(int restaurantId);

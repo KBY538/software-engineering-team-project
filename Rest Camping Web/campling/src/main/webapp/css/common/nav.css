@@ -6,13 +6,18 @@
     margin-bottom: 0px !important;
     box-shadow: 0px 5px 10px 0px rgba(0,0,0,.15)!important;
     border: 0;
-    padding : 0 200px 0 200px
+    padding : 0 300px 0 300px
 }
 
-#logout{
-    margin: 0 0 0 auto;
+.username{
+    margin-right: 20px;
+}
+.auth{
+    margin : 0 0 0 auto;
+    font-weight: 500;
     z-index: 1000;
 }
+
 
 .navbar .lnk li+li:before {
     display: inline-block;

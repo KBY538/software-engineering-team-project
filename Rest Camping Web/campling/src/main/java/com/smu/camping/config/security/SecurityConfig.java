@@ -40,8 +40,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .csrf().disable()
             .authorizeRequests()
             .antMatchers(LOGIN_PAGE_URL, "/main").permitAll() // 로그인 페이지는 모두에게 permit
-            //.antMatchers("/").authenticated()
-            //.anyRequest().hasRole("COMPANY")
+            .antMatchers("/mypage").authenticated()
+            //.anyRequest().hasRole("")
             .and()
                 .formLogin()
                     .failureHandler(new AuthFailureHandler())
