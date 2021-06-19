@@ -7,7 +7,7 @@
 .info-input{
     display: flex;
     flex-direction: column;
-    width: 820px;
+    width: 700px;
     border-radius: 5px;
     box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.2);
     background-color: #fff;

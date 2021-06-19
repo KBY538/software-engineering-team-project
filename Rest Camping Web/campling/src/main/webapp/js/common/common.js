@@ -32,3 +32,10 @@ function addCheckbox(elem, checkboxList){
         elem.append($checkBoxElem)
     }
 }
+
+function basename (filePath){
+    return filePath.split("/").slice(-1)[0]
+}
+function addCommaToNumber(strNumber){    // 정규식을 이용해서 숫자의 3자리 마다 , 추가
+    return String(strNumber).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}

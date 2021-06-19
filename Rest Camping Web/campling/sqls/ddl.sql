@@ -59,9 +59,7 @@ CREATE TABLE room
     `id`           INT            NOT NULL    AUTO_INCREMENT, 
     `campsite_id`  INT			  NULL, 
     `name`         VARCHAR(50)    NULL, 
-    `desc`         TEXT           NULL, 
     `price`        INT            NULL, 
-    `remain`       INT            NULL, 
     `numRemains`   INT            NULL, 
     `maxHeadCnt`   INT            NULL, 
     `baseNumCars`  INT            NULL, 
@@ -134,5 +132,25 @@ CREATE TABLE room_image
 (
     `room_id`   INT    NOT NULL, 
     `image_id`  INT    NOT NULL    AUTO_INCREMENT, 
-    CONSTRAINT  PRIMARY KEY (image_id)
+    CONSTRAINT  PRIMARY KEY (image_id),
+	foreign key (image_id) references file(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    foreign key (room_id) references room(id) ON DELETE CASCADE ON UPDATE CASCADE
 )ENGINE = InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE campsite
+(
+    `id`                       INT            NOT NULL    AUTO_INCREMENT COMMENT '캠핑장 id', 
+    `owner`                    VARCHAR(50)    NULL        COMMENT '캠핑장 주인 이름', 
+    `name`                     VARCHAR(50)    NULL        COMMENT '캠핑장 이름', 
+    `address`                  VARCHAR(50)    NULL, 
+    `contact`                  VARCHAR(50)    NULL, 
+    `introduction`             TEXT    NULL, 
+    `notice`                   TEXT           DEFAULT 0 NULL, 
+    `is_approve`               INT            NULL, 
+    `price_per_excess_person`  INT            NULL, 
+    `price_per_excess_car`     INT            NULL, 
+    CONSTRAINT  PRIMARY KEY (id),
+	foreign key (owner) references user(username) ON DELETE CASCADE ON UPDATE CASCADE
+)ENGINE = InnoDB DEFAULT CHARSET=utf8;
+
+

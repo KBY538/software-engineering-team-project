@@ -6,4 +6,16 @@
         INSERT INTO room(id, campsite_id, name, price, numRemains, maxHeadCnt, baseNumCars, baseHeadCnt)
         VALUES (#{id}, #{campsiteId}, #{name}, #{price}, #{numRemains}, #{maxHeadCnt}, #{baseNumCars}, #{baseHeadCnt})
     </insert>
+
+    <select id="getCheapestRoomByCampsiteId" resultType="java.lang.Integer">
+        SELECT min(price)
+        FROM room
+        WHERE campsite_id = #{campsiteId}
+    </select>
+
+    <select id = "getRoomByCampsiteId" resultType="com.smu.camping.dto.campsite.RoomDto">
+        SELECT *
+        FROM room
+        WHERE campsite_id = #{campsiteId}
+    </select>
 </mapper>

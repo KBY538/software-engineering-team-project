@@ -25,13 +25,21 @@ div.content-container{
 div.content{
     display: flex;
     justify-content: center;
-    margin : 130px 400px 50px 450px ;
+    margin : 130px 570px 50px 570px ;
 }
 
 div.content{
     justify-content: normal ;
 }
 
+img{
+    object-fit:cover;
+}
+
+small{
+    font-size: 12px;
+    font-weight: 400;
+}
 .label {
     margin-top : 10px;
     width : 100%;

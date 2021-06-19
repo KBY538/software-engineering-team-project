@@ -7,10 +7,12 @@ import com.smu.camping.mapper.campsite.imageInfoMapper.*;
 import com.smu.camping.mapper.file.FileInfoMapper;
 import com.smu.camping.mapper.post.review.CampsiteReviewMapper;
 import com.smu.camping.mapper.util.FileUtil;
+import org.apache.tomcat.jni.FileInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -19,23 +21,23 @@ public class CampsiteInfoService{
 	CampsiteInfoMapper campsiteInfoMapper;
 
 	@Autowired
-	RestaurantMapper restaurantMapper;
+	RestaurantService restaurantService;
 	
 	@Autowired
-	MealKitMapper mealKitMapper;
+	MealKitService mealKitService;
+
+	@Autowired
+	RoomService roomService;
 	
+	@Autowired
+	TouristService touristService;
+
 	@Autowired
 	FileInfoMapper fileInfoMapper;
-	
+
 	@Autowired
 	FileUtil fileUtil;
-	
-	@Autowired
-	RoomMapper roomMapper;
-	
-	@Autowired
-	TouristMapper touristMapper;
-	
+
 	@Autowired
 	CampsiteImageInfoMapper campsiteImageInfoMapper;
 
@@ -60,13 +62,39 @@ public class CampsiteInfoService{
 	@Autowired
 	TouristImageInfoMapper touristImageInfoMapper;
 
+	public CampsiteDto getCampsiteInfoByCampsiteId(int CampsiteId){
+		CampsiteDto campsiteDto = campsiteInfoMapper.getCampsiteInfoByCampsiteId(CampsiteId);
+
+		int campsiteId = campsiteDto.getId();
+		ImageInfoDto imageInfoDto = campsiteImageInfoMapper.getImageInfoById(campsiteId);
+		int imageId = imageInfoDto.getImageId();
+
+		campsiteDto.setRestaurantInfos(restaurantService.getRestaurantByCampsiteId(campsiteId));
+		campsiteDto.setTouristInfos(touristService.getTouristByCampsiteId(campsiteId));
+		campsiteDto.setRooms(roomService.getRoomByCampsiteId(campsiteId));
+		campsiteDto.setImage(fileInfoMapper.getFileInfo(imageId));
+
+		campsiteDto.setCheapestRoomPrice(roomService.getCheapestRoomByCampsiteId(campsiteId));
+		campsiteDto.setOperatingTypes(operatingMapper.getCampsiteOperatingByCampsiteId(campsiteId));
+		campsiteDto.setFacilities(facilityMapper.getCampsiteFacilityByCampsiteId(campsiteId));
+
+		return campsiteDto;
+	}
+
 	public List<CampsiteDto> getCampsiteInfoByFilter(SearchFilterDto searchFilterDto){
-		return campsiteInfoMapper.getCampsiteInfoByFilter(searchFilterDto);
+		List<CampsiteDto> campsiteDtoList = campsiteInfoMapper.getCampsiteInfoByFilter(searchFilterDto);
+		List<CampsiteDto> resultCampsiteResultList = new ArrayList<>();
+
+		for (CampsiteDto campsiteDto : campsiteDtoList){
+			int campsiteId = campsiteDto.getId();
+			resultCampsiteResultList.add(getCampsiteInfoByCampsiteId(campsiteId));
+		}
+
+		return resultCampsiteResultList;
 	}
 
 	@Transactional(readOnly = false)
 	public int createCampsiteInfo(CampsiteDto campsiteDto){
-
 		int createCnt = campsiteInfoMapper.createCampsiteInfo(campsiteDto);
 		int campsiteId = campsiteDto.getId();
 		String owner = campsiteDto.getOwner();
@@ -74,49 +102,23 @@ public class CampsiteInfoService{
 		facilityMapper.createCampsiteFacility(campsiteId, campsiteDto.getFacilities());
 		operatingMapper.createCampsiteOperating(campsiteId, campsiteDto.getOperatingTypes());
 
+		FileInfoDto campsiteFileInfoDto = campsiteDto.getImage();
+		campsiteFileInfoDto.setUsername(owner);
+		fileInfoMapper.createFileInfos(campsiteFileInfoDto);
+		campsiteImageInfoMapper.createImageInfo(new ImageInfoDto(campsiteId, campsiteFileInfoDto.getId()));
+
 		List<RoomDto> rooms = campsiteDto.getRooms();
-		for (RoomDto room : rooms){
-			room.setCampsiteId(campsiteId);
-			roomMapper.createRoom(room);
-			int roomId = room.getId();
-			FileInfoDto fileInfoDto = room.getImage();
-			fileInfoDto.setUsername(owner);
-			fileInfoMapper.createFileInfos(room.getImage());
-			roomImageInfoMapper.createImageInfo(new ImageInfoDto(roomId, fileInfoDto.getId()));
-		}
+		roomService.createRooms(rooms, campsiteId, owner);
 
 		List<RestaurantDto> restaurantInfos = campsiteDto.getRestaurantInfos();
-		for (RestaurantDto restaurant : restaurantInfos){
-			restaurant.setCampsiteId(campsiteId);
-			restaurantMapper.createRestaurant(restaurant);
-			int restaurantId = restaurant.getId();
-			FileInfoDto fileInfoDto = restaurant.getImage();
-			fileInfoDto.setUsername(owner);
-			fileInfoMapper.createFileInfos(restaurant.getImage());
-			restaurantImageInfoMapper.createImageInfo(new ImageInfoDto(restaurantId, fileInfoDto.getId()));
-		}
+		System.out.println(restaurantInfos);
+		restaurantService.createRestaurants(restaurantInfos, campsiteId, owner);
 
 		List<MealKitDto> mealKits = campsiteDto.getMealKits();
-		for (MealKitDto mealKit : mealKits){
-			mealKit.setCampsiteId(campsiteId);
-			mealKitMapper.createMealkit(mealKit);
-			int mealKitId = mealKit.getId();
-			FileInfoDto fileInfoDto = mealKit.getImage();
-			fileInfoDto.setUsername(owner);
-			fileInfoMapper.createFileInfos(mealKit.getImage());
-			mealKitImageInfoMapper.createImageInfo(new ImageInfoDto(mealKitId, fileInfoDto.getId()));
-		}
+		mealKitService.createMealKits(mealKits, campsiteId, owner);
 
-		List<TouristDto> touristInfos = campsiteDto.getTouristInfos();
-		for (TouristDto touristInfo : touristInfos){
-			touristInfo.setCampsiteId(campsiteId);
-			touristMapper.createTourist(touristInfo);
-			int touristId = touristInfo.getId();
-			FileInfoDto fileInfoDto = touristInfo.getImage();
-			fileInfoDto.setUsername(owner);
-			fileInfoMapper.createFileInfos(touristInfo.getImage());
-			touristImageInfoMapper.createImageInfo(new ImageInfoDto(touristId, fileInfoDto.getId()));
-		}
+		List<TouristDto> tourists = campsiteDto.getTouristInfos();
+		touristService.createTourists(tourists, campsiteId, owner);
 
 		return createCnt;
 	}
@@ -135,10 +137,7 @@ public class CampsiteInfoService{
 	public CampsiteDto getCampsiteInfoByUserName(String owner){
 		
 	}
-	
-	public CampsiteDto getCampsiteInfoByCampsiteId(int CampsiteId){
-		
-	}
+
 	
 	public List<CampsiteDto> getCampsiteOrderByReviewNum(){
 		

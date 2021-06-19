@@ -4,4 +4,10 @@
     <insert id = "createImageInfo">
         INSERT INTO tourist_image(tourist_id, image_id) VALUES (#{id}, #{imageId})
     </insert>
+
+    <select id="getImageInfoById" resultType="com.smu.camping.dto.campsite.ImageInfoDto">
+        SELECT *
+        FROM tourist_image
+        WHERE tourist_id = #{touristId}
+    </select>
 </mapper>

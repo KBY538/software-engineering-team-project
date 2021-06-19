@@ -3,7 +3,28 @@
 
 <mapper namespace="com.smu.camping.mapper.campsite.CampsiteInfoMapper">
     <select id = "getCampsiteInfoByFilter" resultType="com.smu.camping.dto.campsite.CampsiteDto" parameterType="com.smu.camping.dto.campsite.SearchFilterDto">
+        SELECT id, owner, name, address, contact
+        FROM campsite
+        WHERE
+            is_approve = 1
+            <if test="campsiteName != null">
+                and name LIKE CONCAT('%',#{campsiteName},'%')
+            </if>
 
+            <if test="facilities.size != 0 or operatings.size != 0">
+                and id IN (
+                    SELECT distinct(c1.id)
+                    FROM campsite c1 JOIN campsite_facility as cf ON c1.id = cf.campsite_id
+                    JOIN campsite_operating as co ON c1.id = co.campsite_id
+                    WHERE
+                        <if test="facilities.size != 0">
+                            cf.name IN (<foreach collection="facilities" item="facilityName" separator=", ">#{facilityName}</foreach>)
+                        </if>
+                        <if test="operatings.size != 0">
+                            AND co.type IN (<foreach collection="operatings" item="operatingType" separator=", ">#{operatingType}</foreach>)
+                        </if>
+                )
+            </if>
     </select>
 
     <select id = "getCampsiteOrderByReviewNum">
@@ -14,7 +35,7 @@
 
     </select>
 
-    <select id = "getCampsiteInfoByCampsiteId">
+    <select id = "getCampsiteInfoByCampsiteId" resultType="com.smu.camping.dto.campsite.CampsiteDto">
         SELECT *
         FROM campsite
         WHERE id = #{id}
@@ -33,6 +54,8 @@
     </select>
 
     <insert id = "createCampsiteInfo" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO campsite(id, owner, address, name, contact, introduction) VALUES(#{id}, #{owner}, #{name}, #{address}, #{contact}, #{introduction})
+        INSERT
+        INTO campsite(id, owner, name, address, contact, introduction, notice, is_approve, price_per_excess_person, price_per_excess_car)
+        VALUES (#{id}, #{owner}, #{name}, #{address}, #{contact}, #{introduction}, #{notice}, #{isApprove}, #{pricePerExcessPerson}, #{pricePerExcessCar})
     </insert>
 </mapper>

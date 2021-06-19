@@ -8,6 +8,7 @@ import java.util.List;
 @Repository
 public interface RoomMapper {
 	public int createRoom(RoomDto roomDto);
+	public int getCheapestRoomByCampsiteId(int campsiteId);
 	public int updateRoom(RoomDto roomDto);
 	public int deleteRoom(int roomId);
 	public RoomDto getRoom(int roomId);

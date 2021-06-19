@@ -5,4 +5,10 @@
     <insert id="createRestaurant" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO restaurant_info(id, campsite_id, name, `desc`, address) VALUES (#{id}, #{campsiteId}, #{name}, #{desc}, #{address})
     </insert>
+
+    <select id = "getRestaurantByCampsiteId" resultType="com.smu.camping.dto.campsite.RestaurantDto">
+        SELECT *
+        FROM restaurant_info
+        WHERE campsite_id = #{campsiteId}
+    </select>
 </mapper>

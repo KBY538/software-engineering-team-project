@@ -15,11 +15,15 @@ public class CampsiteDto {
     private int id;
     private String owner;
     private boolean isApprove;
+
     private String name;
     private String address;
     private String contact;
+
     private String introduction;
     private String notice;
+    private int cheapestRoomPrice;
+
     private int pricePerExcessPerson;
     private int pricePerExcessCar;
 

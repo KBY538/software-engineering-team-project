@@ -3,7 +3,7 @@
 
 <mapper namespace="com.smu.camping.mapper.campsite.OperatingMapper">
     <select id = "getCampsiteOperatingByCampsiteId" resultType="string">
-        SELECT * FROM campsite_operating WHERE campsite_id = #{campsiteId}
+        SELECT type FROM campsite_operating WHERE campsite_id = #{campsiteId}
     </select>
 
     <insert id = "createCampsiteOperating" parameterType="java.util.List">

@@ -17,9 +17,13 @@ public class CampsiteInfoController {
 	@Autowired
 	CampsiteInfoService campsiteInfoService;
 
-	@PostMapping("/campsite/search")
-	public List<CampsiteDto> getCampsiteInfoByFilter(SearchFilterDto searchFilterDto){
-		System.out.println(searchFilterDto);
+	@GetMapping("/campsite/search")
+	public List<CampsiteDto> getCampsiteInfoByFilter(@RequestParam String campsiteName, @RequestParam List<String> facilities, @RequestParam List<String> operatings){
+		SearchFilterDto searchFilterDto = new SearchFilterDto();
+		searchFilterDto.setCampsiteName(campsiteName);
+		searchFilterDto.setFacilities(facilities);
+		searchFilterDto.setOperatings(operatings);
+
 		return campsiteInfoService.getCampsiteInfoByFilter(searchFilterDto);
 	}
 
@@ -27,7 +31,6 @@ public class CampsiteInfoController {
 	public ApiResponse createCampsiteInfo(@RequestBody CampsiteDto campsiteDto, @AuthenticationPrincipal CustomUserDetails userDetails){
 		String owner = userDetails.getUsername();
 
-		System.out.println(campsiteDto);
 		campsiteDto.setOwner(owner);
 		campsiteInfoService.createCampsiteInfo(campsiteDto);
 

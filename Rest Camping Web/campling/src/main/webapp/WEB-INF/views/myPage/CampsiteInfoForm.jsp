@@ -178,7 +178,7 @@
         </div>
 
         <div class="info-input__row">
-            <div class="info-input__row-header">주변 관광지 정보</div>
+            <div class="info-input__row-header">주변 <br>관광지 정보</div>
             <div class="option-input-list">
                 <div class = "wrap-column normal tourist">
                     <div class="input-wrap__input-header">관광지 1 </div>
@@ -216,7 +216,7 @@
         </div>
 
         <div class="info-input__row">
-            <div class="info-input__row-header">주변 맛집 정보</div>
+            <div class="info-input__row-header">주변 <br>맛집 정보</div>
             <div class="option-input-list">
                 <div class = "wrap-column normal restaurant">
                     <div class="input-wrap__input-header">맛집 1</div>

@@ -5,4 +5,10 @@
     <insert id = "createTourist" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO tourist_info(id, campsite_id, name, `desc`, address) VALUES (#{id}, #{campsiteId}, #{name}, #{desc}, #{address})
     </insert>
+
+    <select id = "getTouristByCampsiteId" resultType="com.smu.camping.dto.campsite.TouristDto">
+        SELECT *
+        FROM tourist_info
+        WHERE campsite_id = #{campsiteId}
+    </select>
 </mapper>

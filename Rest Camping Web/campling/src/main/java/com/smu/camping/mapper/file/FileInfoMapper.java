@@ -10,4 +10,5 @@ public interface FileInfoMapper {
 	public int createFileInfos(FileInfoDto fileInfoDtos);
 	public int deleteFileInfo(int fileId);
 	public FileInfoDto getFileInfo(int fileId);
+	public FileInfoDto getFileInfoByCampsiteId(int campsiteId);
 }

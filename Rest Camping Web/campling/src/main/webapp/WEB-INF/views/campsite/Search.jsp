@@ -3,7 +3,7 @@
     <head>
         <%@ include file="../common/CommonHead.jsp"%>
         <link rel="stylesheet" type="text/css" href="/css/common/search.css">
-        <link rel="stylesheet" type="text/css" href="/css/campsite/main.css">
+        <link rel="stylesheet" type="text/css" href="/css/campsite/search.css">
     </head>
     <body>
     <jsp:include page="../common/Nav.jsp">
@@ -33,6 +33,19 @@
 
                 <div class = "no-campsite" style="text-align: center">
                         검색된 캠핑장이 존재하지 않습니다.
+                </div>
+
+                <div class = "campsiteInfo" style="display: none">
+                    <div class = "wrap-row">
+                        <a class = "campsiteUrl" href=""><img src="" alt=""></a>
+                        <div class = "wrap-column" style="margin-left: 20px; align-content: center">
+                            <span class = "operatings"></span> <br>
+                            <h4><span class = "campsiteName"></span> <br></h4>
+                            <span class = "address"></span> <br>
+                            <span class = "contact"></span> <br>
+                        </div>
+                        <h4 class = "price"></h4> <br>
+                    </div>
                 </div>
             </div>
         </div>

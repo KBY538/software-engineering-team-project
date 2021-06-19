@@ -4,4 +4,16 @@
     <insert id = "createFileInfos" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO file(username, filePath) VALUES (#{username}, #{filePath})
     </insert>
+
+    <select id = "getFileInfo" resultType="com.smu.camping.dto.file.FileInfoDto">
+        select *
+        FROM file
+        WHERE id = #{fileId}
+    </select>
+
+    <select id = "getFileInfoByCampsiteId" resultType="com.smu.camping.dto.file.FileInfoDto">
+        select *
+        FROM file JOIN campsite_image ON file.id = campsite_image.image_id
+        WHERE campsite_image.campsite_id = #{campsiteId}
+    </select>
 </mapper>

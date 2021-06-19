@@ -3,7 +3,7 @@
 
 <mapper namespace="com.smu.camping.mapper.campsite.FacilityMapper">
     <select id = "getCampsiteFacilityByCampsiteId" resultType="string">
-        SELECT * FROM campsite_facility WHERE campsite_id = #{campsiteId}
+        SELECT name FROM campsite_facility WHERE campsite_id = #{campsiteId}
     </select>
 
 
