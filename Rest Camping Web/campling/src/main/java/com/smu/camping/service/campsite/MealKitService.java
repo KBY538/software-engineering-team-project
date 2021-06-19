@@ -27,7 +27,6 @@ public class MealKitService{
 	@Autowired
 	FileUtil fileUtil;
 
-	@Transactional(readOnly = false)
 	public int createMealKits(List<MealKitDto> mealKitDtos, int campsiteId, String owner){
 		int createCnt = 0;
 
@@ -45,16 +44,15 @@ public class MealKitService{
 	}
 
 /*
-	@Transactional(readOnly = false)
 	public int updateMealKits(List<MealKitDto> mealKitDtos, List<MultipartFile> multipartFiles){
 		
 	}
 
-	@Transactional(readOnly = false)
 	public int deleteMealKit(int mealKitId){
 		
 	}
-	
+
+	@Transactional(readOnly = true)
 	public MealKitDto getMealKit(int mealKitId){
 		
 	}*/

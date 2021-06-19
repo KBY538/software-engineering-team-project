@@ -15,7 +15,7 @@
 
         <div class="content-container">
             <div class="content">
-                <div class="campsiteInfo shadow">
+                <div class="campsite-info shadow" data-label = "${campsiteDto.id}">
                     <div class = "title-info">
                         <div class = "left">
                             <img src= "http://localhost/${FilenameUtils.getName(campsiteDto.image.filePath)}" class = "campsite-main-img" alt="">
@@ -119,5 +119,6 @@
 
         <%@ include file="../common/Footer.jsp"%>
         <%@ include file="../common/CommonScript.jsp"%>
+        <script src="/js/campsite/campsiteInfo.js" type="text/javascript"></script>
     </body>
 </html>

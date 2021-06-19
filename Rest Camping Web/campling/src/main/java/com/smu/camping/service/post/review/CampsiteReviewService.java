@@ -1,10 +1,15 @@
 package com.smu.camping.service.post.review;
 
+import com.smu.camping.dto.post.review.ReviewCommentDto;
+import com.smu.camping.dto.post.review.ReviewDto;
 import com.smu.camping.mapper.campsite.RoomMapper;
 import com.smu.camping.mapper.post.review.CampsiteReviewCommentMapper;
 import com.smu.camping.mapper.post.review.CampsiteReviewMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 public class CampsiteReviewService {
@@ -16,41 +21,37 @@ public class CampsiteReviewService {
 	
 	@Autowired
 	RoomMapper roomMapper;
-/*
-	@Transactional(readOnly = false)
-	public int createReview(ReviewDto reviewDto){
+
+/*	public int createReview(ReviewDto reviewDto){
 		
 	}
 
-	@Transactional(readOnly = false)
 	public int deleteReview(int reviewId){
 		
 	}
 
-	@Transactional(readOnly = false)
 	public int updateReview(ReviewDto reviewDto){
 		
 	}
 
-	@Transactional(readOnly = false)
 	public int createReviewComment(ReviewCommentDto reviewCommentDto){
 		
 	}
 
-	@Transactional(readOnly = false)
 	public int deleteReviewComment(int reviewCommentId){
 		
 	}
 
-	@Transactional(readOnly = false)
 	public int updateReviewComment(ReviewCommentDto reviewCommentDto){
 		
 	}
-	
+
+	@Transactional(readOnly = true)
 	public List<ReviewDto> getReviewByUserName(String username){
 		
 	}
-	
+
+	@Transactional(readOnly = true)
 	public List<ReviewDto> getReviewByCampsiteId(int campsiteId){
 		
 	}*/

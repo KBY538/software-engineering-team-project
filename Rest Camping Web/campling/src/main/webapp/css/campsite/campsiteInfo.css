@@ -9,7 +9,8 @@ ul, li{
 .content{
     justify-content: center !important;
 }
-.campsiteInfo{
+
+.campsite-info{
     width : 800px;
     border-radius: 5px;
     height : 100%;
@@ -71,7 +72,7 @@ ul, li{
     margin-top: 40px;
 }
 
-.campsiteInfo .detail-info .title{
+.campsite-info .detail-info .title{
     font-size: 17px;
     margin-top: 10px;
 }

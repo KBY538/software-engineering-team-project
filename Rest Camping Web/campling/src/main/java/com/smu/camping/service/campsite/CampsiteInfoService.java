@@ -62,6 +62,7 @@ public class CampsiteInfoService{
 	@Autowired
 	TouristImageInfoMapper touristImageInfoMapper;
 
+	@Transactional(readOnly = true)
 	public CampsiteDto getCampsiteInfoByCampsiteId(int CampsiteId){
 		CampsiteDto campsiteDto = campsiteInfoMapper.getCampsiteInfoByCampsiteId(CampsiteId);
 
@@ -81,6 +82,7 @@ public class CampsiteInfoService{
 		return campsiteDto;
 	}
 
+	@Transactional(readOnly = true)
 	public List<CampsiteDto> getCampsiteInfoByFilter(SearchFilterDto searchFilterDto){
 		List<CampsiteDto> campsiteDtoList = campsiteInfoMapper.getCampsiteInfoByFilter(searchFilterDto);
 		List<CampsiteDto> resultCampsiteResultList = new ArrayList<>();
@@ -93,7 +95,6 @@ public class CampsiteInfoService{
 		return resultCampsiteResultList;
 	}
 
-	@Transactional(readOnly = false)
 	public int createCampsiteInfo(CampsiteDto campsiteDto){
 		int createCnt = campsiteInfoMapper.createCampsiteInfo(campsiteDto);
 		int campsiteId = campsiteDto.getId();
@@ -125,20 +126,21 @@ public class CampsiteInfoService{
 
 /*
 
-	@Transactional(readOnly = false)
 	public int updateCampsiteInfo(CampsiteDto campsiteDto){
 		
 	}
-	
+
+	@Transactional(readOnly = true)
 	public List<CampsiteDto> getAllCampsiteInfo(){
 		
 	}
-	
+
+	@Transactional(readOnly = true)
 	public CampsiteDto getCampsiteInfoByUserName(String owner){
 		
 	}
 
-	
+	@Transactional(readOnly = true)
 	public List<CampsiteDto> getCampsiteOrderByReviewNum(){
 		
 	}

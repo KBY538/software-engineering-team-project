@@ -30,12 +30,12 @@ $(".search-form").submit(async (event) => {
 })
 
 $(document).on("click", ".campsiteInfo", (event) => {
-    let url = $(event.target).closest(".campsiteInfo").data("src")
+    let url = $(event.target).closest(".campsite-info").data("src")
     window.location = url;
 })
 
 function showSearchResult(searchResult){
-    $(".campsiteInfo").filter(function() {
+    $(".campsite-info").filter(function() {
         return $(this).css('display') != 'none';
     }).remove();
 
@@ -43,7 +43,7 @@ function showSearchResult(searchResult){
         $(".no-campsite").css("display", "none")
 
         for(let campsiteInfo of searchResult){
-            let $campsiteInfo = $(".campsiteInfo:first").clone()
+            let $campsiteInfo = $(".campsite-info:first").clone()
 
             let imageFilePath = campsiteInfo.image.filePath;
 

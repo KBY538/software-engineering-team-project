@@ -1,8 +1,10 @@
 package com.smu.camping.controller.view;
 
 import com.smu.camping.dto.campsite.CampsiteDto;
+import com.smu.camping.dto.campsite.RoomDto;
 import com.smu.camping.dto.user.CustomUserDetails;
 import com.smu.camping.service.campsite.CampsiteInfoService;
+import com.smu.camping.service.campsite.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -18,6 +20,9 @@ import java.util.*;
 public class ViewController {
     @Autowired
     CampsiteInfoService campsiteInfoService;
+
+    @Autowired
+    RoomService roomService;
 
     @ModelAttribute("userInfo")
     public Map<String, String> userInfoModelAttribute(@AuthenticationPrincipal CustomUserDetails userDetails){
@@ -77,10 +82,22 @@ public class ViewController {
     }
 
     @GetMapping("/campsite/{campsiteId}")
-    public String campsitePage(ModelMap modelMap, @PathVariable(name = "campsiteId", required = false) int campsiteId){
+    public String campsitePage(ModelMap modelMap, @PathVariable("campsiteId") int campsiteId){
         CampsiteDto campsiteDto = campsiteInfoService.getCampsiteInfoByCampsiteId(campsiteId);
 
         modelMap.addAttribute("campsiteDto", campsiteDto);
         return "/campsite/CampsiteInfo";
+    }
+
+    @GetMapping("/reservation/{campsiteId}/{roomId}")
+    public String reservationPage(ModelMap modelMap,
+                                  @PathVariable("campsiteId") int campsiteId,
+                                  @PathVariable("roomId") int roomId){
+
+        RoomDto roomDto = roomService.getRoomByRoomId(roomId);
+
+        modelMap.addAttribute("roomDto", roomDto);
+
+        return "/campsite/Reservation";
     }
 }

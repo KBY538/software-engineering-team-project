@@ -1,5 +1,6 @@
-$(".reservation-btn").on("click", () => {
+$(".reservation-btn").on("click", (event) => {
     let target = event.target;
     let roomId = $(target).closest(".room-info").data("label")
-    window.location = "/reservation/room/55"
+    let campsiteId = $(target).closest(".campsite-info").data("label")
+    window.location = `/reservation/${campsiteId}/${roomId}`
 })

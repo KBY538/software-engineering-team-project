@@ -13,48 +13,47 @@ public class CommunityService {
 	@Autowired
 	CommunityCommentMapper communityCommentMapper;
 	
-/*	@Transactional(readOnly = false)
+/*
 	public int createCommunityPost(CommunityPostDto communityPostDto){
 		
 	}
 
-	@Transactional(readOnly = false)
 	public int updateCommunityPost(CommunityPostDto communityPostDto){
 		
 	}
 
-	@Transactional(readOnly = false)
 	public int deleteCommunityPost(int postId){
 		
 	}
 
-	@Transactional(readOnly = false)
 	public int createCommunityComment(CommunityCommentDto communityCommentDto){
 		
 	}
 
-	@Transactional(readOnly = false)
 	public int updateCommunityComment(CommunityCommentDto communityCommentDto){
 		
 	}
 
-	@Transactional(readOnly = false)
 	public int deleteCommunityComment(int postId){
 		
 	}
-	
+
+	@Transactional(readOnly = true)
 	public List<CommunityPostDto> getAllCommunityPost(){
 		
 	}
-	
+
+	@Transactional(readOnly = true)
 	public List<CommunityPostDto> getCommunityPostByUsername(String writer){
 		
 	}
-	
+
+	@Transactional(readOnly = true)
 	public List<CommunityPostDto> getCommunityPostByPostId(int postId){
 		
 	}
-	
+
+	@Transactional(readOnly = true)
 	public List<CommunityPostDto> getCommunityPostByCommentWriter(String commentWriter) {
 
 	}*/

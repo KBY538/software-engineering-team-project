@@ -14,7 +14,7 @@
     height : 380px
 }
 
-.campsiteInfo{
+.campsite-info{
     position: relative;
     width : 600px;
     height: 180px;
@@ -26,13 +26,13 @@
     cursor: pointer;
 }
 
-.campsiteInfo img{
+.campsite-info img{
     width : 160px;
     height: 160px;
     border-radius: 5px;
 }
 
-.campsiteInfo span{
+.campsite-info span{
     line-height: 20px;
 }
 

@@ -31,6 +31,7 @@ public class RestaurantService{
 	@Autowired
 	FileUtil fileUtil;
 
+	@Transactional(readOnly = true)
 	public List<RestaurantDto> getRestaurantByCampsiteId(int campsiteId){
 
 		List<RestaurantDto> restaurantDtos = restaurantMapper.getRestaurantByCampsiteId(campsiteId);
@@ -44,7 +45,6 @@ public class RestaurantService{
 		return restaurantDtos;
 	}
 
-	@Transactional(readOnly = false)
 	public int createRestaurants(List<RestaurantDto> restaurantDtos, int campsiteId, String owner){
 		int createCnt = 0;
 
@@ -61,16 +61,15 @@ public class RestaurantService{
 		return createCnt;
 	}
 /*
-	@Transactional(readOnly = false)
 	public int updateRestaurants(List<RestaurantDto> restaurantDtos, List<MultipartFile> multipartFiles){
 		
 	}
 
-	@Transactional(readOnly = false)
 	public int deleteRestaurant(int restaurantId){
 		
 	}
-	
+
+	@Transactional(readOnly = true)
 	public RestaurantDto getRestaurant(int restaurantId){
 		
 	}*/

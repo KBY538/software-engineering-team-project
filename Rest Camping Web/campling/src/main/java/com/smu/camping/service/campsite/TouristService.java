@@ -28,6 +28,7 @@ public class TouristService{
 	@Autowired
 	FileUtil fileUtil;
 
+	@Transactional(readOnly = true)
 	public List<TouristDto> getTouristByCampsiteId(int campsiteId){
 
 		List<TouristDto> touristDtos = touristMapper.getTouristByCampsiteId(campsiteId);
@@ -42,7 +43,6 @@ public class TouristService{
 		return touristDtos;
 	}
 
-	@Transactional(readOnly = false)
 	public int createTourists(List<TouristDto> touristDtos, int campsiteId, String owner){
 		int createCnt = 0;
 
@@ -60,18 +60,15 @@ public class TouristService{
 	}
 
 /*
-
-
-	@Transactional(readOnly = false)
 	public int updateTourist(List<TouristDto> touristDtos, List<MultipartFile> multipartFiles){
 		
 	}
 
-	@Transactional(readOnly = false)
 	public int deleteTourist(int touristId){
 		
 	}
-	
+
+	@Transactional(readOnly = true)
 	public TouristDto getTourist(int touristId){
 		
 	}*/

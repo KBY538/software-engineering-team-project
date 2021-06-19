@@ -1,0 +1,51 @@
+img {
+    border-radius: 2px;
+}
+
+ul, li{
+    list-style-type : circle;
+}
+
+.content{
+    justify-content: center !important;
+}
+
+.campsite-info{
+    width : 800px;
+    border-radius: 5px;
+    height : 100%;
+    background-color: #ffffff;
+    padding : 10px;
+}
+
+.campsite-main-img{
+    width : 400px;
+    height : 400px;
+    float: left;
+}
+
+.base-info{
+    margin-bottom: 5px;
+}
+
+.base-info div{
+    margin-bottom: 5px;
+}
+
+.title-info{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.right{
+    margin-left: 25px;
+    flex-grow: 100;
+}
+

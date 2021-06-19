@@ -33,6 +33,7 @@ public class RoomService{
 		return roomMapper.getCheapestRoomByCampsiteId(campsiteId);
 	}
 
+	@Transactional(readOnly = true)
 	public List<RoomDto> getRoomByCampsiteId(int campsiteId){
 
 		List<RoomDto> roomDtos = roomMapper.getRoomByCampsiteId(campsiteId);
@@ -45,14 +46,15 @@ public class RoomService{
 
 		return roomDtos;
 	}
-	@Transactional(readOnly = false)
+
 	public int createRooms(List<RoomDto> roomDtos, int campsiteId, String owner){
 		int createCnt = 0;
 
 		for (RoomDto room : roomDtos){
 			room.setCampsiteId(campsiteId);
-			createCnt += roomMapper.createRoom(room);
 			int roomId = room.getId();
+
+			createCnt += roomMapper.createRoom(room);
 			FileInfoDto fileInfoDto = room.getImage();
 			fileInfoDto.setUsername(owner);
 			fileInfoMapper.createFileInfos(fileInfoDto);
@@ -60,6 +62,11 @@ public class RoomService{
 		}
 
 		return createCnt;
+	}
+
+	@Transactional(readOnly = true)
+	public RoomDto getRoomByRoomId(int roomId){
+		return roomMapper.getRoom(roomId);
 	}
 
 /*

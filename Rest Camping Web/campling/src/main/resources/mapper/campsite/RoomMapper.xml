@@ -18,4 +18,10 @@
         FROM room
         WHERE campsite_id = #{campsiteId}
     </select>
+
+    <select id = "getRoom" resultType="com.smu.camping.dto.campsite.RoomDto">
+        SELECT *
+        FROM room
+        WHERE id = #{roomId}
+    </select>
 </mapper>
