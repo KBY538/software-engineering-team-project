@@ -14,13 +14,13 @@ import java.util.List;
 @Service
 public class CampsiteReviewService {
 	@Autowired
-	CampsiteReviewMapper campsiteReviewMapper;
+	private CampsiteReviewMapper campsiteReviewMapper;
 	
 	@Autowired
-	CampsiteReviewCommentMapper campsiteReviewCommentMapper;
+	private CampsiteReviewCommentMapper campsiteReviewCommentMapper;
 	
 	@Autowired
-	RoomMapper roomMapper;
+	private RoomMapper roomMapper;
 
 /*	public int createReview(ReviewDto reviewDto){
 		

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CampsiteQuestionController {
 	@Autowired
-	CampsiteQuestionService campsiteQuestionService;
+	private CampsiteQuestionService campsiteQuestionService;
 	
 /*	public ApiResponse createQuestionComment(@AuthenticationPrincipal CustomUserDetails userDetails, CampsiteQuestionCommentDto campsiteQuestionCommentDto) {
 		

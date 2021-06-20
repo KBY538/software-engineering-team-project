@@ -18,6 +18,6 @@ public class MarkerDto {
     private String campInfo;
     private String memo;
 
-    @JsonFormat(pattern = "yyyyMMdd", timezone = "Asia/Seoul")
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "Asia/Seoul")
     private Date createDate;
 }

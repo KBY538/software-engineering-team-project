@@ -154,3 +154,26 @@ CREATE TABLE campsite
 )ENGINE = InnoDB DEFAULT CHARSET=utf8;
 
 
+CREATE TABLE reservation
+(
+    `id`                  INT            NOT NULL    AUTO_INCREMENT, 
+    `room_id`             INT            NULL, 
+    `check_in_date`       DATE           NULL, 
+    `check_out_date`      DATE           NULL, 
+    `phone_num`           VARCHAR(50)    NULL, 
+    `username`            VARCHAR(50)    NULL, 
+    `campsite_id`         INT            NULL, 
+    `reservationHeadCnt`  INT            NULL, 
+    `reservationNumCars`  INT            NULL, 
+    `totalPrice`          INT            NULL, 
+    CONSTRAINT PK_reservation PRIMARY KEY (id),
+    foreign key (username) references user(username) ON DELETE CASCADE ON UPDATE CASCADE,
+	foreign key (username) references user(username) ON DELETE CASCADE ON UPDATE CASCADE
+)ENGINE = InnoDB DEFAULT CHARSET=utf8;
+
+
+ALTER TABLE reservation
+    ADD CONSTRAINT FK_reservation_room_id_room_id FOREIGN KEY (room_id)
+        REFERENCES room (id) ON DELETE RESTRICT ON UPDATE RESTRICT;
+        
+        

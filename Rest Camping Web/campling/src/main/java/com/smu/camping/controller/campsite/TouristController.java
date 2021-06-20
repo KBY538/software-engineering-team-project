@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TouristController {
 	@Autowired
-	TouristService touristService;
+	private TouristService touristService;
 
 /*	public ApiResponse createTourists(List<TouristDto> touristDtos, List<MultipartFile> multipartFiles){
 		

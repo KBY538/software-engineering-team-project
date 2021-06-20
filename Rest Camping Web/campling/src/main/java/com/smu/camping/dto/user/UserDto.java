@@ -16,6 +16,6 @@ public class UserDto {
     private String password;
     private String phoneNum;
 
-    @JsonFormat(pattern = "yyyyMMdd", timezone = "Asia/Seoul")
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "Asia/Seoul")
     private Date createDate;
 }

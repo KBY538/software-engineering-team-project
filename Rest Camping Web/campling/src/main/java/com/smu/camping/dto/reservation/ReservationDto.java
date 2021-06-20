@@ -17,13 +17,9 @@ import java.util.List;
 public class ReservationDto {
     private int id;
 
-    private String username;
-    private int campsiteId;
-    private int roomId;
-
-    @JsonFormat(pattern = "yyyyMMdd", timezone = "Asia/Seoul")
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "Asia/Seoul")
     private Date checkInDate;
-    @JsonFormat(pattern = "yyyyMMdd", timezone = "Asia/Seoul")
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "Asia/Seoul")
     private Date checkOutDate;
 
     private boolean isApprove;

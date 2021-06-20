@@ -18,49 +18,49 @@ import java.util.List;
 @Service
 public class CampsiteInfoService{
 	@Autowired
-	CampsiteInfoMapper campsiteInfoMapper;
+	private CampsiteInfoMapper campsiteInfoMapper;
 
 	@Autowired
-	RestaurantService restaurantService;
+	private RestaurantService restaurantService;
 	
 	@Autowired
-	MealKitService mealKitService;
+	private MealKitService mealKitService;
 
 	@Autowired
-	RoomService roomService;
+	private RoomService roomService;
 	
 	@Autowired
-	TouristService touristService;
+	private TouristService touristService;
 
 	@Autowired
-	FileInfoMapper fileInfoMapper;
+	private FileInfoMapper fileInfoMapper;
 
 	@Autowired
-	FileUtil fileUtil;
+	private FileUtil fileUtil;
 
 	@Autowired
-	CampsiteImageInfoMapper campsiteImageInfoMapper;
+	private CampsiteImageInfoMapper campsiteImageInfoMapper;
 
 	@Autowired
-	FacilityMapper facilityMapper;
+	private FacilityMapper facilityMapper;
 
 	@Autowired
-	OperatingMapper operatingMapper;
+	private OperatingMapper operatingMapper;
 
 	@Autowired
-	CampsiteReviewMapper campsiteReviewMapper;
+	private CampsiteReviewMapper campsiteReviewMapper;
 
 	@Autowired
-	MealKitImageInfoMapper mealKitImageInfoMapper;
+	private MealKitImageInfoMapper mealKitImageInfoMapper;
 
 	@Autowired
-	RestaurantImageInfoMapper restaurantImageInfoMapper;
+	private RestaurantImageInfoMapper restaurantImageInfoMapper;
 
 	@Autowired
-	RoomImageInfoMapper roomImageInfoMapper;
+	private RoomImageInfoMapper roomImageInfoMapper;
 
 	@Autowired
-	TouristImageInfoMapper touristImageInfoMapper;
+	private TouristImageInfoMapper touristImageInfoMapper;
 
 	@Transactional(readOnly = true)
 	public CampsiteDto getCampsiteInfoByCampsiteId(int CampsiteId){
@@ -70,6 +70,7 @@ public class CampsiteInfoService{
 		ImageInfoDto imageInfoDto = campsiteImageInfoMapper.getImageInfoById(campsiteId);
 		int imageId = imageInfoDto.getImageId();
 
+		campsiteDto.setMealKits(mealKitService.getMealKitsByCampsiteId(campsiteId));
 		campsiteDto.setRestaurantInfos(restaurantService.getRestaurantByCampsiteId(campsiteId));
 		campsiteDto.setTouristInfos(touristService.getTouristByCampsiteId(campsiteId));
 		campsiteDto.setRooms(roomService.getRoomByCampsiteId(campsiteId));

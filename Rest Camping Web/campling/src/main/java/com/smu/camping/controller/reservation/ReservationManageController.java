@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ReservationManageController {
 	@Autowired
-	ReservationManageService reservationManageService;
+	private ReservationManageService reservationManageService;
 
 	@Autowired
-	RoomMapper roomMapper;
+	private RoomMapper roomMapper;
 	
 /*	public ApiResponse approveReservation(int reservationId){
 		

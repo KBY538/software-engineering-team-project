@@ -17,16 +17,16 @@ import java.util.List;
 @Service
 public class TouristService{
 	@Autowired
-	TouristMapper touristMapper;
+	private TouristMapper touristMapper;
 	
 	@Autowired
-	TouristImageInfoMapper touristImageInfoMapper;
+	private TouristImageInfoMapper touristImageInfoMapper;
 	
 	@Autowired
-	FileInfoMapper fileInfoMapper;
+	private FileInfoMapper fileInfoMapper;
 
 	@Autowired
-	FileUtil fileUtil;
+	private FileUtil fileUtil;
 
 	@Transactional(readOnly = true)
 	public List<TouristDto> getTouristByCampsiteId(int campsiteId){

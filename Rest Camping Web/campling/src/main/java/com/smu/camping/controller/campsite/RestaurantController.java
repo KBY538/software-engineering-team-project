@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class RestaurantController {
 	@Autowired
-	RestaurantService restaurantService;
+	private RestaurantService restaurantService;
 	
 /*	public ApiResponse createRestaurants(List<RestaurantDto> restaurantDtos, List<MultipartFile> multipartFiles){
 		

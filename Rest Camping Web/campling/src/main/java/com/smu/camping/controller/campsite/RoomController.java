@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class RoomController {
 	@Autowired
-	RoomService roomservice;
+	private RoomService roomservice;
 
 /*	public ApiResponse createRooms(List<RoomDto> roomDtos, List<MultipartFile> multipartFiles){
 		

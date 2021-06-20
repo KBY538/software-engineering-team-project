@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CommunityController {
 	@Autowired
-	CommunityService communityService;
+	private CommunityService communityService;
 
 /*	public ApiResponse createCommunityPost(@AuthenticationPrincipal CustomUserDetails userDetails, CommunityPostDto communityPostDto){
 		

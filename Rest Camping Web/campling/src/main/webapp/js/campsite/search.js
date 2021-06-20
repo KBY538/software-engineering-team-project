@@ -29,7 +29,7 @@ $(".search-form").submit(async (event) => {
     showSearchResult(searchResult)
 })
 
-$(document).on("click", ".campsiteInfo", (event) => {
+$(document).on("click", ".campsite-info", (event) => {
     let url = $(event.target).closest(".campsite-info").data("src")
     window.location = url;
 })

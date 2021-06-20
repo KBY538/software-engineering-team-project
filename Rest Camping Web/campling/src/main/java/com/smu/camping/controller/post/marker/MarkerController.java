@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MarkerController {
 	@Autowired
-	MarkerService markerService;
+	private MarkerService markerService;
 	
 /*	public ApiResponse createMarker(@AuthenticationPrincipal CustomUserDetails userDetails, MarkerDto markerDto){
 		

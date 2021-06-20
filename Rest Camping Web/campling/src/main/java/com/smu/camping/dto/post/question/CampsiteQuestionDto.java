@@ -22,7 +22,7 @@ public class CampsiteQuestionDto {
     private String content;
     private boolean isAnswer;
 
-    @JsonFormat(pattern = "yyyyMMdd", timezone = "Asia/Seoul")
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "Asia/Seoul")
     private Date createDate;
 
     private CampsiteQuestionCommentDto questionCommentInfo;

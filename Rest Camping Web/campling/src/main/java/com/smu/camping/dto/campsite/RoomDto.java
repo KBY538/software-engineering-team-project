@@ -16,7 +16,7 @@ public class RoomDto {
 
     private String name;
     private int price;
-    private int numRemains;
+    private int roomNums;
 
     private int maxHeadCnt;
     private int baseHeadCnt;

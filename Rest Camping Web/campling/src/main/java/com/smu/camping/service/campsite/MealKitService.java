@@ -16,16 +16,21 @@ import java.util.List;
 @Service
 public class MealKitService{
 	@Autowired
-	MealKitMapper mealKitMapper;
+	private MealKitMapper mealKitMapper;
 
 	@Autowired
-	MealKitImageInfoMapper mealKitImageInfoMapper;
+	private MealKitImageInfoMapper mealKitImageInfoMapper;
 	
 	@Autowired
-	FileInfoMapper fileInfoMapper;
+	private FileInfoMapper fileInfoMapper;
 	
 	@Autowired
-	FileUtil fileUtil;
+	private FileUtil fileUtil;
+
+	@Transactional(readOnly = true)
+	public MealKitDto getMealKit(int mealKitId){
+		return mealKitMapper.getMealKit(mealKitId);
+	}
 
 	public int createMealKits(List<MealKitDto> mealKitDtos, int campsiteId, String owner){
 		int createCnt = 0;
@@ -43,6 +48,21 @@ public class MealKitService{
 		return createCnt;
 	}
 
+	@Transactional(readOnly = true)
+	public List<MealKitDto> getMealKitsByCampsiteId(int campsiteId){
+
+		List<MealKitDto> mealKitDtos = mealKitMapper.getMealKitByCampsiteId(campsiteId);
+
+		for (MealKitDto mealKitDto : mealKitDtos){
+			int mealKitId = mealKitDto.getId();
+			ImageInfoDto imageInfoDto = mealKitImageInfoMapper.getImageInfoById(mealKitId);
+			FileInfoDto fileInfoDto = fileInfoMapper.getFileInfo(imageInfoDto.getImageId());
+			mealKitDto.setImage(fileInfoDto);
+		}
+
+		return mealKitDtos;
+	}
+
 /*
 	public int updateMealKits(List<MealKitDto> mealKitDtos, List<MultipartFile> multipartFiles){
 		
@@ -51,9 +71,5 @@ public class MealKitService{
 	public int deleteMealKit(int mealKitId){
 		
 	}
-
-	@Transactional(readOnly = true)
-	public MealKitDto getMealKit(int mealKitId){
-		
-	}*/
+*/
 }

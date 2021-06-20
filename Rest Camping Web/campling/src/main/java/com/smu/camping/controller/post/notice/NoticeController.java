@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class NoticeController {
 	@Autowired
-	NoticeService noticeService;
+	private NoticeService noticeService;
 	
 /*	public ApiResponse createNotice(@AuthenticationPrincipal CustomUserDetails userDetails, NoticeDto noticeDto){
 		

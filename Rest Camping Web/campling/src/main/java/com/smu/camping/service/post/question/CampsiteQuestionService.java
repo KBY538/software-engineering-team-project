@@ -13,10 +13,10 @@ import java.util.List;
 @Service
 public class CampsiteQuestionService {
 	@Autowired
-	CampsiteQuestionMapper campsiteQuestionMapper;
+	private CampsiteQuestionMapper campsiteQuestionMapper;
 
 	@Autowired
-	CampsiteQuestionCommentMapper campsiteQuestionCommentMapper;
+	private CampsiteQuestionCommentMapper campsiteQuestionCommentMapper;
 
 /*	public int createQuestionComment(CampsiteQuestionCommentDto campsiteQuestionCommentDto) {
 		

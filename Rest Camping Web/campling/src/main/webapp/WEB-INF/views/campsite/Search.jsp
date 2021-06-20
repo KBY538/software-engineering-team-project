@@ -35,7 +35,7 @@
                         검색된 캠핑장이 존재하지 않습니다.
                 </div>
 
-                <div class = "campsiteInfo" style="display: none">
+                <div class = "campsite-info" style="display: none">
                     <div class = "wrap-row">
                         <a class = "campsiteUrl" href=""><img src="" alt=""></a>
                         <div class = "wrap-column" style="margin-left: 20px; align-content: center">

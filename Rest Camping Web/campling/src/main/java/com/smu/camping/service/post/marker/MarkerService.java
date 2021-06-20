@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class MarkerService {
 	@Autowired
-	MarkerMapper markerMapper;
+	private MarkerMapper markerMapper;
 	
 /*	public int createMarker(MarkerDto markerDto){
 		

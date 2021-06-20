@@ -7,6 +7,7 @@
     <head>
         <%@ include file="../common/CommonHead.jsp"%>
         <link rel="stylesheet" type="text/css" href="/css/campsite/campsiteInfo.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     </head>
     <body>
         <jsp:include page="../common/Nav.jsp">
@@ -63,6 +64,11 @@
                             </div>
                         </div>
 
+                        <div class = "title">입실일, 퇴실일 선택</div>
+                        <div class="reservation-date">
+                            <input type="text" name = "reservation-date-input" class = "form-control pull-right">
+                        </div>
+
                         <div class = "title">방 정보</div>
                         <c:forEach items="${campsiteDto.rooms}" var = "roomInfo" varStatus="status">
                             <div class = "room-infos">
@@ -71,9 +77,8 @@
                                     <div class = "right">
                                         <h4><div class = "room-name"></div>${roomInfo.name}</h4>
                                         <div class = "room-capacity">
-                                            <span class = "room-base-head-cnt">기준 : <span>${roomInfo.baseHeadCnt}명</span></span>/
+                                            <span class = "room-base-head-cnt">기준 : <span>${roomInfo.baseHeadCnt}명</span></span> /
                                             <span class = "room-max-head-cnt">최대 : <span>${roomInfo.maxHeadCnt}명</span></span>
-                                            <div class = "room-remains">남은방 : <span>${roomInfo.numRemains}</span></div>
                                         </div>
 
                                         <div class = "wrap-column">
@@ -85,7 +90,7 @@
                             </div>
                         </c:forEach>
 
-                        <div class = "title">주변 관광지 정보</div>
+                        <div class = "title">주변 관광지</div>
                         <c:forEach items="${campsiteDto.touristInfos}" var = "touristInfo" varStatus="status">
                             <div class = "tourist-infos">
                                 <div class = "tourist-info">
@@ -99,7 +104,7 @@
                             </div>
                         </c:forEach>
 
-                        <div class = "title">주변 맛집 정보</div>
+                        <div class = "title">주변 맛집</div>
                         <c:forEach items="${campsiteDto.restaurantInfos}" var = "restaurantInfo" varStatus="status">
                             <div class = "restaurant-infos">
                                 <div class = "restaurant-info">
@@ -119,6 +124,9 @@
 
         <%@ include file="../common/Footer.jsp"%>
         <%@ include file="../common/CommonScript.jsp"%>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
         <script src="/js/campsite/campsiteInfo.js" type="text/javascript"></script>
     </body>
 </html>

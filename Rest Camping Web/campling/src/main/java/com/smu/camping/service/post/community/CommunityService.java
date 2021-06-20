@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class CommunityService {
 	@Autowired
-	CommunityPostMapper communityPostMapper;
+	private CommunityPostMapper communityPostMapper;
 	
 	@Autowired
-	CommunityCommentMapper communityCommentMapper;
+	private CommunityCommentMapper communityCommentMapper;
 	
 /*
 	public int createCommunityPost(CommunityPostDto communityPostDto){

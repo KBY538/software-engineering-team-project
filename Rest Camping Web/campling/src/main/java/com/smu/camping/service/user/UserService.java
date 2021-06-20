@@ -13,10 +13,10 @@ import java.util.List;
 @Service
 public class UserService {
 	@Autowired
-	UserMapper userMapper;
+	private UserMapper userMapper;
 
 	@Autowired
-	UserRoleMapper userRoleMapper;
+	private UserRoleMapper userRoleMapper;
 
 	private final String ROLE_CAMPER = "ROLE_CAMPER";
 	private final String ROLE_OWNER= "ROLE_OWNER";

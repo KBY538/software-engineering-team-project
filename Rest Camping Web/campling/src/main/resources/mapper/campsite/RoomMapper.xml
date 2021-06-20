@@ -3,8 +3,8 @@
 
 <mapper namespace="com.smu.camping.mapper.campsite.RoomMapper">
     <insert id = "createRoom" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO room(id, campsite_id, name, price, numRemains, maxHeadCnt, baseNumCars, baseHeadCnt)
-        VALUES (#{id}, #{campsiteId}, #{name}, #{price}, #{numRemains}, #{maxHeadCnt}, #{baseNumCars}, #{baseHeadCnt})
+        INSERT INTO room(id, campsite_id, name, price, room_nums, maxHeadCnt, baseNumCars, baseHeadCnt)
+        VALUES (#{id}, #{campsiteId}, #{name}, #{price}, #{roomNums}, #{maxHeadCnt}, #{baseNumCars}, #{baseHeadCnt})
     </insert>
 
     <select id="getCheapestRoomByCampsiteId" resultType="java.lang.Integer">

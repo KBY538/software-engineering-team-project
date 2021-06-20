@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MealKitController {
 	@Autowired
-	MealKitService mealkitService;
+	private MealKitService mealkitService;
 
 /*	public ApiResponse createMealKits(List<MealKitDto> mealKitDtos, List<MultipartFile> multipartFiles){
 		

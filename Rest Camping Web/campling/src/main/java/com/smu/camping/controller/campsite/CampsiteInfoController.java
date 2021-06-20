@@ -15,7 +15,7 @@ import java.util.List;
 @RestController
 public class CampsiteInfoController {
 	@Autowired
-	CampsiteInfoService campsiteInfoService;
+	private CampsiteInfoService campsiteInfoService;
 
 	@GetMapping("/campsite/search")
 	public List<CampsiteDto> getCampsiteInfoByFilter(@RequestParam String campsiteName, @RequestParam List<String> facilities, @RequestParam List<String> operatings){

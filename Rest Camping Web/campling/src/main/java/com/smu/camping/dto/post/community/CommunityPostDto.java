@@ -18,7 +18,7 @@ public class CommunityPostDto {
     private String writer;
     private String content;
 
-    @JsonFormat(pattern = "yyyyMMdd", timezone = "Asia/Seoul")
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "Asia/Seoul")
     private Date createDate;
     
     private List<CommunityCommentDto> comments;

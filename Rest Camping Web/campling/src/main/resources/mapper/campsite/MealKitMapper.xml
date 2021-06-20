@@ -5,4 +5,16 @@
     <insert id="createMealkit" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO mealkit(id, campsite_id, name, price, numRemains) VALUES (#{id}, #{campsiteId}, #{name}, #{price}, #{numRemains})
     </insert>
+
+    <select id = "getMealKitByCampsiteId" resultType="com.smu.camping.dto.campsite.MealKitDto">
+        SELECT *
+        FROM mealkit
+        WHERE campsite_id = #{campsiteId}
+    </select>
+
+    <select id = "getMealKit" resultType="com.smu.camping.dto.campsite.MealKitDto">
+        SELECT *
+        FROM mealkit
+        WHERE id = #{mealKitId}
+    </select>
 </mapper>

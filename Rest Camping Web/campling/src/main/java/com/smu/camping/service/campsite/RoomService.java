@@ -18,16 +18,16 @@ import java.util.List;
 @Service
 public class RoomService{
 	@Autowired
-	RoomMapper roomMapper;
+	private RoomMapper roomMapper;
 	
 	@Autowired
-	RoomImageInfoMapper roomImageInfoMapper;
+	private RoomImageInfoMapper roomImageInfoMapper;
 	
 	@Autowired
-	FileInfoMapper fileInfoMapper;
+	private FileInfoMapper fileInfoMapper;
 	
 	@Autowired
-	FileUtil fileUtil;
+	private FileUtil fileUtil;
 
 	public int getCheapestRoomByCampsiteId(int campsiteId){
 		return roomMapper.getCheapestRoomByCampsiteId(campsiteId);
@@ -66,7 +66,12 @@ public class RoomService{
 
 	@Transactional(readOnly = true)
 	public RoomDto getRoomByRoomId(int roomId){
-		return roomMapper.getRoom(roomId);
+		RoomDto roomDto = roomMapper.getRoom(roomId);
+		ImageInfoDto imageInfoDto = roomImageInfoMapper.getImageInfoById(roomId);
+		FileInfoDto fileInfoDto = fileInfoMapper.getFileInfo(imageInfoDto.getImageId());
+		roomDto.setImage(fileInfoDto);
+
+		return roomDto;
 	}
 
 /*

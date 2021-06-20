@@ -20,16 +20,16 @@ import java.util.List;
 @Service
 public class RestaurantService{
 	@Autowired
-	RestaurantMapper restaurantMapper;
+	private RestaurantMapper restaurantMapper;
 	
 	@Autowired
-	RestaurantImageInfoMapper restaurantImageInfoMapper;
+	private RestaurantImageInfoMapper restaurantImageInfoMapper;
 	
 	@Autowired
-	FileInfoMapper fileInfoMapper;
+	private FileInfoMapper fileInfoMapper;
 	
 	@Autowired
-	FileUtil fileUtil;
+	private FileUtil fileUtil;
 
 	@Transactional(readOnly = true)
 	public List<RestaurantDto> getRestaurantByCampsiteId(int campsiteId){
