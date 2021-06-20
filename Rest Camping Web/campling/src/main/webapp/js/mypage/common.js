@@ -13,6 +13,8 @@ $(".add-info").on("click", (event) => {
     let $cloneElem = $optionWrap.clone(true)
     $optionWrap.after($cloneElem)
 
+    $cloneElem.find("textarea").val(" ")
+
     $cloneElem.find("input").val("")
     $cloneElem.find(".imagePreview").css("background-image", "")
     let header = $cloneElem.children(".input-wrap__input-header")
