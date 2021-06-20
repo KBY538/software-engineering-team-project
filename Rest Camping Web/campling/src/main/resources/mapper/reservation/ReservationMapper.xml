@@ -22,16 +22,42 @@
         </association>
     </resultMap>
 
-    <insert id = "createReservation" keyProperty="id" useGeneratedKeys="true">
-        INSERT
-        INTO reservation(id, username, room_id, campsite_id, check_in_date, check_out_date, phone_num, booker, reservation_head_cnt, reservation_num_cars, total_price, is_approve)
-        VALUES (#{id}, #{username}, #{roomDto.id}, #{campsiteDto.id}, #{checkInDate}, #{checkOutDate}, #{bookerPhoneNum}, #{bookerName}, #{reservationHeadCnt}, #{reservationNumCars}, #{totalPrice}, 0)
-    </insert>
-
     <select id="getReservationByReservationId" resultMap="reservationDto">
         SELECT id, username, room_id as roomId, campsite_id as campsiteId, check_in_date as checkInDate, check_out_date as checkOutDate, phone_num as bookerPhoneNum, booker as bookerName,
                reservation_head_cnt as reservationHeadCnt, reservation_num_cars as reservationNumCars, total_price as totalPrice, is_approve as isApprove
         FROM reservation
         WHERE id = #{id}
     </select>
+
+    <select id = "getReservationByCampsiteId" resultMap="reservationDto">
+        SELECT id, username, room_id as roomId, campsite_id as campsiteId, check_in_date as checkInDate, check_out_date as checkOutDate, phone_num as bookerPhoneNum, booker as bookerName,
+               reservation_head_cnt as reservationHeadCnt, reservation_num_cars as reservationNumCars, total_price as totalPrice, is_approve as isApprove
+        FROM reservation
+        WHERE campsite_id = #{campsiteId}
+    </select>
+
+    <select id = "getReservationByUsername" resultMap="reservationDto">
+        SELECT id, username, room_id as roomId, campsite_id as campsiteId, check_in_date as checkInDate, check_out_date as checkOutDate, phone_num as bookerPhoneNum, booker as bookerName,
+               reservation_head_cnt as reservationHeadCnt, reservation_num_cars as reservationNumCars, total_price as totalPrice, is_approve as isApprove
+        FROM reservation
+        WHERE username = #{username}
+    </select>
+
+    <insert id = "createReservation" keyProperty="id" useGeneratedKeys="true">
+        INSERT
+        INTO reservation(id, username, room_id, campsite_id, check_in_date, check_out_date, phone_num, booker, reservation_head_cnt, reservation_num_cars, total_price, is_approve)
+        VALUES (#{id}, #{username}, #{roomDto.id}, #{campsiteDto.id}, #{checkInDate}, #{checkOutDate}, #{bookerPhoneNum}, #{bookerName}, #{reservationHeadCnt}, #{reservationNumCars}, #{totalPrice}, 0)
+    </insert>
+
+    <update id = "updateReservation">
+        UPDATE reservation
+        SET booker = #{bookerName}, phone_num = #{bookerPhoneNum}
+        WHERE id = #{id}
+    </update>
+
+    <delete id = "deleteReservation">
+        DELETE
+        FROM reservation
+        WHERE id = #{reservationId}
+    </delete>
 </mapper>

@@ -68,8 +68,8 @@ $(".confirm-button").on("click", async () => {
         let campsitePhoneNum = $("input[name = 'campsitePhoneNum']").val()
         let campsiteIntroduction = $("textarea[name = 'campsiteIntroduction']").val()
         let campsiteNotice = $("textarea[name = 'campsiteNotice']").val()
-        let pricePerExcessCar = $(".reservation-info [name = 'pricePerExcessCar']").val()
-        let pricePerExcessPerson = $(".reservation-info [name = 'pricePerExcessPerson']").val()
+        let pricePerExcessCar = $("input[name = 'pricePerExcessCar']").val()
+        let pricePerExcessPerson = $("input[name = 'pricePerExcessPerson']").val()
 
         let facilities = getCheckedValue($("div[data-label= 'facility'] input[type = 'checkbox']:checked"))
         let operatings = getCheckedValue($("div[data-label= 'operating'] input[type = 'checkbox']:checked"))

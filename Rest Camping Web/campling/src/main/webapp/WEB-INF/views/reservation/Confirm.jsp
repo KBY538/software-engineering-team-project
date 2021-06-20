@@ -78,14 +78,19 @@
 
                                         <div class="input-wrap">
                                             <div class="input-wrap__input-header">예약 상태</div>
-                                            <div class = "info-value"><c:choose>
-                                                <c:when test="${reservationDto.approve == false}">
-                                                    예약 승인 전
-                                                </c:when>
-                                                <c:when test="${reservationDto.approve == true}">
-                                                    승인 됨
-                                                </c:when>
-                                            </c:choose></div>
+                                            <div class = "info-value">
+                                                <c:choose>
+                                                    <c:when test="${reservationInfo.isApprove == 0}">
+                                                        예약 승인 전
+                                                    </c:when>
+                                                    <c:when test="${reservationInfo.isApprove == 1}">
+                                                        승인 됨
+                                                    </c:when>
+                                                    <c:when test="${reservationInfo.isApprove == 2}">
+                                                        예약 거절 됨
+                                                    </c:when>
+                                                </c:choose>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

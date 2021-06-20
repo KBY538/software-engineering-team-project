@@ -41,12 +41,9 @@
         WHERE id = #{id}
     </select>
 
-    <select id = "getCampsiteInfoByUserName">
-
-    </select>
-
-    <select id = "getAllCampsiteInfo">
-        SELECT * FROM campsite
+    <select id = "getAllCampsiteInfo" resultType="com.smu.camping.dto.campsite.CampsiteDto">
+        SELECT *
+        FROM campsite
     </select>
 
     <select id = "updateCampsiteInfo">
@@ -58,4 +55,23 @@
         INTO campsite(id, owner, name, address, contact, introduction, notice, is_approve, price_per_excess_person, price_per_excess_car)
         VALUES (#{id}, #{owner}, #{name}, #{address}, #{contact}, #{introduction}, #{notice}, #{isApprove}, #{pricePerExcessPerson}, #{pricePerExcessCar})
     </insert>
+
+
+    <select id = "getCampsiteInfoByUserName" resultType="com.smu.camping.dto.campsite.CampsiteDto">
+        SELECT *
+        FROM campsite
+        WHERE owner = #{owner}
+    </select>
+
+    <update id = "approveCampsite">
+        UPDATE campsite
+        SET is_approve = 1
+        WHERE id = #{campsiteId}
+    </update>
+
+    <update id = "rejectCampsite">
+        UPDATE campsite
+        SET is_approve = 2
+        WHERE id = #{campsiteId}
+    </update>
 </mapper>

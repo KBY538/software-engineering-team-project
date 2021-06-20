@@ -16,4 +16,6 @@ public interface CampsiteInfoMapper {
 	public List<CampsiteDto> getCampsiteOrderByReviewNum();
 	public List<CampsiteDto> getCampsiteInfoByFilter(SearchFilterDto searchFilter);
 	public int getCampsiteCntOfOwner(String owner);
+	int approveCampsite(int campsiteId);
+	int rejectCampsite(int campsiteId);
 }

@@ -73,7 +73,7 @@ public class MealKitService{
 
 		for(MealKitOrderDto mealKitOrderDto : mealKitOrderDtos){
 			mealKitOrderDto.setReservationId(reservationId);
-			System.out.println(mealKitOrderDto);
+
 			createCnt += mealKitMapper.createMealKitOrder(mealKitOrderDto);
 		}
 

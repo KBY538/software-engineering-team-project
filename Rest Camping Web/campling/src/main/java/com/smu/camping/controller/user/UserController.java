@@ -30,7 +30,7 @@ public class UserController {
 	@PostMapping("/signUp")
 	public ApiResponse signUp(UserDto userDto){
 		String username = userDto.getUsername();
-		System.out.println(username);
+
 		boolean validation = userService.usernameValidation(username); // 아이디 중복 검사
 
 		if(validation){

@@ -50,12 +50,14 @@ public class RoomService{
 
 		for (RoomDto room : roomDtos){
 			room.setCampsiteId(campsiteId);
-			int roomId = room.getId();
 
 			createCnt += roomMapper.createRoom(room);
+			int roomId = room.getId();
+
 			FileInfoDto fileInfoDto = room.getImage();
 			fileInfoDto.setUsername(owner);
 			fileInfoMapper.createFileInfos(fileInfoDto);
+
 			roomImageInfoMapper.createImageInfo(new ImageInfoDto(roomId, fileInfoDto.getId()));
 		}
 

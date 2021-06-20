@@ -25,7 +25,7 @@ public class ReservationDto {
     @JsonFormat(pattern = "yyyy-MM-dd", timezone = "Asia/Seoul")
     private Date checkOutDate;
 
-    private boolean isApprove;
+    private int isApprove;
 
     private int reservationHeadCnt;
     private int reservationNumCars;

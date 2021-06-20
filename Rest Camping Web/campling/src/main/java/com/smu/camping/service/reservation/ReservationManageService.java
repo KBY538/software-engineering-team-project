@@ -8,12 +8,12 @@ import org.springframework.stereotype.Service;
 public class ReservationManageService {
 	@Autowired
 	private ReservationManageMapper reservationManageMapper;
-	
-/*	public int approveReservation(int reservationId){
 
+	public int approveReservation(int reservationId){
+		return reservationManageMapper.approveReservation(reservationId);
 	}
 
 	public int rejectReservation(int reservationId){
-
-	}*/
+		return reservationManageMapper.rejectReservation(reservationId);
+	}
 }

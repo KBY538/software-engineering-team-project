@@ -5,7 +5,6 @@ import com.smu.camping.dto.campsite.RoomDto;
 import com.smu.camping.dto.reservation.ReservationDto;
 import com.smu.camping.dto.user.CustomUserDetails;
 import com.smu.camping.service.campsite.CampsiteInfoService;
-import com.smu.camping.service.campsite.MealKitService;
 import com.smu.camping.service.campsite.RoomService;
 import com.smu.camping.service.reservation.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -77,6 +76,11 @@ public class ViewController {
     @GetMapping(value = {"/mypage", "/mypage/{menu}"})
     public String mypage(@AuthenticationPrincipal CustomUserDetails userDetails, ModelMap modelMap, @PathVariable(name = "menu", required = false) String menu){
         Collection<? extends GrantedAuthority> authorities = userDetails.getAuthorities();
+        String username = userDetails.getUsername();
+
+        List<ReservationDto> ownerReservationInfos = reservationService.getReservationByOwner(username);
+        List<ReservationDto> camperReservationInfos = reservationService.getReservationByUsername(username);
+        List<CampsiteDto> campsiteDtoList = campsiteInfoService.getAllCampsiteInfo();
 
         List<String> strAuthorities = new ArrayList<>();
 
@@ -84,11 +88,15 @@ public class ViewController {
             strAuthorities.add(authority.getAuthority());
         }
 
+        modelMap.addAttribute("campsiteDtoList", campsiteDtoList);
+        modelMap.addAttribute("ownerReservationInfos", ownerReservationInfos);
+        modelMap.addAttribute("camperReservationInfos", camperReservationInfos);
         modelMap.addAttribute("user_role", strAuthorities);
         modelMap.addAttribute("menu", menu);
 
         return "myPage/MyPage";
     }
+
 
     @GetMapping("/campsite/{campsiteId}")
     public String campsitePage(ModelMap modelMap, @PathVariable("campsiteId") int campsiteId){
@@ -119,7 +127,6 @@ public class ViewController {
         ReservationDto reservationDto = reservationService.getReservationByReservationId(reservationId);
         modelMap.addAttribute("reservationDto", reservationDto);
 
-        System.out.println(reservationDto.getMealKitOrders());
         return "reservation/Confirm";
     }
 }

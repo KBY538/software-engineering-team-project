@@ -56,7 +56,7 @@ public class ReservationService {
 		Date checkInDate = reservationDto.getCheckInDate();
 		Date checkOutDate = reservationDto.getCheckOutDate();
 		int dateDiff = CalendarUtil.calculateDateDiff(checkOutDate, checkInDate);
-		System.out.println(dateDiff);
+
 		int totalPrice = roomDto.getPrice() * (dateDiff + 1);
 
 		int reservationHeadCnt = reservationDto.getReservationHeadCnt();
@@ -110,31 +110,51 @@ public class ReservationService {
 		return reservationDto;
 	}
 
-/*
-
-	public int deleteReservation(int reservationId){
-		
-	}
-
-	public int updateReservation(ReservationDto reservationDto){
-		
-	}
-
 	@Transactional(readOnly = true)
-	public ReservationDto getReservationByReservationId(int reservationId){
-		
-	}
+	public List<ReservationDto> getReservationByOwner(String owner){
+		CampsiteDto campsiteDto = campsiteService.getCampsiteInfoByUserName(owner);
+		if(campsiteDto != null){
+			int campsiteId = campsiteDto.getId();
+			List<ReservationDto> reservationDtos = getReservationByCampsiteId(campsiteId);
 
-	@Transactional(readOnly = true)
-	public List<ReservationDto> getReservationByUsername(String username){
-		
+			for(ReservationDto reservationDto : reservationDtos){
+				int roomId = reservationDto.getRoomDto().getId();
+				reservationDto.setRoomDto(roomService.getRoomByRoomId(roomId));
+			}
+
+			return reservationDtos;
+		}
+		return null;
 	}
 
 	@Transactional(readOnly = true)
 	public List<ReservationDto> getReservationByCampsiteId(int campsiteId){
-		
+		return reservationMapper.getReservationByCampsiteId(campsiteId);
 	}
 
+	@Transactional(readOnly = true)
+	public List<ReservationDto> getReservationByUsername(String username){
+		List<ReservationDto> camperReservationInfos = reservationMapper.getReservationByUsername(username);
+
+		for (ReservationDto reservationDto : camperReservationInfos){
+			int roomId = reservationDto.getRoomDto().getId();
+			int campsiteId = reservationDto.getCampsiteDto().getId();
+			reservationDto.setCampsiteDto(campsiteService.getCampsiteInfoByCampsiteId(campsiteId));
+			reservationDto.setRoomDto(roomService.getRoomByRoomId(roomId));
+		}
+
+		return camperReservationInfos;
+	}
+
+	public int deleteReservation(int reservationId){
+		return reservationMapper.deleteReservation(reservationId);
+	}
+
+	public int updateReservation(ReservationDto reservationDto){
+		return reservationMapper.updateReservation(reservationDto);
+	}
+
+/*
 	@Transactional(readOnly = true)
 	public boolean reservationIsAvailable(ReservationDto reservationDto){
 		

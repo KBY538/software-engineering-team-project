@@ -6,6 +6,8 @@
     <%@ include file="../common/CommonHead.jsp"%>
     <link rel="stylesheet" type="text/css" href="/css/mypage/common.css">
     <link rel="stylesheet" type="text/css" href="/css/mypage/campsiteInfoForm.css">
+    <link rel="stylesheet" type="text/css" href="/css/mypage/manageReservation.css">
+    <link rel="stylesheet" type="text/css" href="/css/mypage/searchReservation.css">
     <link rel="stylesheet" type="text/css" href="/css/mypage/verticalTab.css">
     <link rel="stylesheet" type="text/css" href="/css/common/imageUploader.css">
 </head>
@@ -37,10 +39,29 @@
 
             <div class = "main-content">
                 <script> let menu = "${menu}"</script>
+                <script>document.querySelector("div.content-container").style.padding = "0";</script>
+
                 <c:choose>
                     <c:when test="${menu eq 'manage-campsite-info'}">
-                        <script>document.querySelector("div.content-container").style.padding = "0";</script>
                         <%@ include file="CampsiteInfoForm.jsp"%>
+                    </c:when>
+
+                    <c:when test="${menu eq 'manage-reservation'}">
+                        <jsp:include page="ManageReservation.jsp">
+                            <jsp:param name="ownerReservationInfo" value="${ownerReservationInfo}" />
+                        </jsp:include>
+                    </c:when>
+
+                    <c:when test="${menu eq 'search-reservation'}">
+                        <jsp:include page="SearchReservation.jsp">
+                            <jsp:param name="camperReservationInfos" value="${camperReservationInfos}" />
+                        </jsp:include>
+                    </c:when>
+
+                    <c:when test="${menu eq 'manage-campsite'}">
+                        <jsp:include page="ManageCampsite.jsp">
+                            <jsp:param name="campsiteDtoList" value="${campsiteDtoList}" />
+                        </jsp:include>
                     </c:when>
                 </c:choose>
             </div>
@@ -51,6 +72,9 @@
     <%@ include file="../common/CommonScript.jsp"%>
     <script src="/js/mypage/verticalTab.js" type="text/javascript"></script>
     <script src="/js/mypage/common.js" type="text/javascript"></script>
+    <script src="/js/mypage/manageReservation.js" type="text/javascript"></script>
+    <script src="/js/mypage/manageCampsite.js" type="text/javascript"></script>
+    <script src="/js/mypage/searchReservation.js" type="text/javascript"></script>
     <script src="/js/common/imageUploader.js" type="text/javascript"></script>
 </body>
 </html>

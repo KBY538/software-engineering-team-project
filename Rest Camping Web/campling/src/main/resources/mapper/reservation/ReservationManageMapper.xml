@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.smu.camping.mapper.reservation.ReservationManageMapper">
+    <update id = "approveReservation">
+        update reservation
+        SET is_approve = 1
+        WHERE id = #{reservationId}
+    </update>
+
+    <update id = "rejectReservation">
+        update reservation
+        SET is_approve = 2
+        WHERE id = #{reservationId}
+    </update>
+</mapper>

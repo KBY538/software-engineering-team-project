@@ -112,7 +112,7 @@ public class CampsiteInfoService{
 		roomService.createRooms(rooms, campsiteId, owner);
 
 		List<RestaurantDto> restaurantInfos = campsiteDto.getRestaurantInfos();
-		System.out.println(restaurantInfos);
+
 		restaurantService.createRestaurants(restaurantInfos, campsiteId, owner);
 
 		List<MealKitDto> mealKits = campsiteDto.getMealKits();
@@ -124,19 +124,35 @@ public class CampsiteInfoService{
 		return createCnt;
 	}
 
-/*
-
-	public int updateCampsiteInfo(CampsiteDto campsiteDto){
-		
+	@Transactional(readOnly = true)
+	public CampsiteDto getCampsiteInfoByUserName(String owner){
+		return campsiteInfoMapper.getCampsiteInfoByUserName(owner);
 	}
 
 	@Transactional(readOnly = true)
 	public List<CampsiteDto> getAllCampsiteInfo(){
-		
+		List<CampsiteDto> campsiteDoList = campsiteInfoMapper.getAllCampsiteInfo();
+		List<CampsiteDto> resultList = new ArrayList<>();
+
+		for (CampsiteDto campsiteDto : campsiteDoList){
+			int campsiteId = campsiteDto.getId();
+			resultList.add(getCampsiteInfoByCampsiteId(campsiteId));
+		}
+		return resultList;
 	}
 
-	@Transactional(readOnly = true)
-	public CampsiteDto getCampsiteInfoByUserName(String owner){
+	public int approveCampsite(int campsiteId){
+		return campsiteInfoMapper.approveCampsite(campsiteId);
+	}
+
+	public int rejectCampsite(int campsiteId){
+		return campsiteInfoMapper.rejectCampsite(campsiteId);
+	}
+
+
+/*
+
+	public int updateCampsiteInfo(CampsiteDto campsiteDto){
 		
 	}
 
@@ -147,3 +163,4 @@ public class CampsiteInfoService{
 	
 */
 }
+;

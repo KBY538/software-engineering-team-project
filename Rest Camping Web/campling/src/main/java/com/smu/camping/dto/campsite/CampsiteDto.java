@@ -14,7 +14,7 @@ import java.util.List;
 public class CampsiteDto {
     private int id;
     private String owner;
-    private boolean isApprove;
+    private int isApprove;
 
     private String name;
     private String address;

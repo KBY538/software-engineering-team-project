@@ -88,7 +88,7 @@
                                         <div>남은 수량 : <span class = "num-remains">${mealKitInfo.numRemains}</span></div>
 
                                         <div class="wrap-column">
-                                            <div class = "price" style="font-weight: bold;">${mealKitInfo.price}</div>원
+                                            <span><span class = "price" style="font-weight: bold;">${mealKitInfo.price}</span>원</span>
                                             <div class="wrap-row">
                                                 <button type="button" class="btn btn-secondary down">-</button>
                                                 <div class="input-value mealkit-cnt">0</div>

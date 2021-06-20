@@ -5,3 +5,7 @@
 .input-wrap{
     margin-bottom : 15px;
 }
+
+.content{
+    justify-content: center !important;
+}
