@@ -6,7 +6,6 @@ import com.smu.camping.dto.file.FileInfoDto;
 import com.smu.camping.mapper.campsite.TouristMapper;
 import com.smu.camping.mapper.campsite.imageInfoMapper.TouristImageInfoMapper;
 import com.smu.camping.mapper.file.FileInfoMapper;
-import com.smu.camping.util.FileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,9 +22,6 @@ public class TouristService{
 	
 	@Autowired
 	private FileInfoMapper fileInfoMapper;
-
-	@Autowired
-	private FileUtil fileUtil;
 
 	@Transactional(readOnly = true)
 	public List<TouristDto> getTouristByCampsiteId(int campsiteId){

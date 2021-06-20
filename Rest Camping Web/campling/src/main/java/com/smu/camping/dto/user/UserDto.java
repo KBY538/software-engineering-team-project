@@ -1,8 +1,8 @@
 package com.smu.camping.dto.user;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
+
 import java.util.Date;
 
 @Getter

@@ -1,9 +1,9 @@
 package com.smu.camping.service.user;
 
-import com.smu.camping.mapper.user.UserMapper;
-import com.smu.camping.mapper.user.UserRoleMapper;
 import com.smu.camping.dto.user.UserDto;
 import com.smu.camping.dto.user.UserRoleDto;
+import com.smu.camping.mapper.user.UserMapper;
+import com.smu.camping.mapper.user.UserRoleMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,7 +31,7 @@ public class UserService {
 	}
 
 	@Transactional(readOnly = false)
-	public int createNewUser(UserDto userDto){
+	public int createUser(UserDto userDto){
 		String username = userDto.getUsername();
 		UserRoleDto userRole = new UserRoleDto(username, ROLE_CAMPER);
 

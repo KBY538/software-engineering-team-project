@@ -5,11 +5,9 @@ import com.smu.camping.dto.campsite.CampsiteDto;
 import com.smu.camping.dto.campsite.SearchFilterDto;
 import com.smu.camping.dto.user.CustomUserDetails;
 import com.smu.camping.service.campsite.CampsiteInfoService;
-import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -31,7 +29,7 @@ public class CampsiteInfoController {
 	@PostMapping("/campsite")
 	public ApiResponse createCampsiteInfo(@RequestBody CampsiteDto campsiteDto, @AuthenticationPrincipal CustomUserDetails userDetails){
 		String owner = userDetails.getUsername();
-		System.out.println(campsiteDto);
+
 		campsiteDto.setOwner(owner);
 		campsiteInfoService.createCampsiteInfo(campsiteDto);
 
@@ -51,7 +49,6 @@ public class CampsiteInfoController {
 	}
 
 /*
-
 	public ApiResponse updateCampsiteInfo(CampsiteDto campsiteDto, @AuthenticationPrincipal CustomUserDetails userDetails){
 		
 	}

@@ -2,6 +2,7 @@ package com.smu.camping.dto.post.question;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
+
 import java.util.Date;
 
 @Getter
@@ -9,9 +10,7 @@ import java.util.Date;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class CampsiteQuestionDto {
-
     private int id;
 
     private int campsiteId;
@@ -26,5 +25,4 @@ public class CampsiteQuestionDto {
     private Date createDate;
 
     private CampsiteQuestionCommentDto questionCommentInfo;
-    
 }

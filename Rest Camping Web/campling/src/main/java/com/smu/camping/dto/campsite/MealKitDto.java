@@ -2,7 +2,6 @@ package com.smu.camping.dto.campsite;
 
 import com.smu.camping.dto.file.FileInfoDto;
 import lombok.*;
-import java.util.List;
 
 @Getter
 @Setter

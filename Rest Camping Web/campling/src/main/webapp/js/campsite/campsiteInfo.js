@@ -13,6 +13,5 @@ $(".reservation-btn").on("click", (event) => {
     const startDate = $('input[name = "reservation-date-input"]').data('daterangepicker').startDate._d.format(dateFormat)
     const endDate = $('input[name = "reservation-date-input"]').data('daterangepicker').endDate._d.format(dateFormat)
 
-    console.log(startDate)
     window.location = `/reservation/${campsiteId}/${roomId}?startDate=${startDate}&endDate=${endDate}`
 })

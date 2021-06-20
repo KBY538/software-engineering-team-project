@@ -2,11 +2,11 @@ package com.smu.camping.service.campsite;
 
 import com.smu.camping.dto.campsite.*;
 import com.smu.camping.dto.file.FileInfoDto;
-import com.smu.camping.mapper.campsite.*;
-import com.smu.camping.mapper.campsite.imageInfoMapper.*;
+import com.smu.camping.mapper.campsite.CampsiteInfoMapper;
+import com.smu.camping.mapper.campsite.FacilityMapper;
+import com.smu.camping.mapper.campsite.OperatingMapper;
+import com.smu.camping.mapper.campsite.imageInfoMapper.CampsiteImageInfoMapper;
 import com.smu.camping.mapper.file.FileInfoMapper;
-import com.smu.camping.mapper.post.review.CampsiteReviewMapper;
-import com.smu.camping.util.FileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -35,9 +35,6 @@ public class CampsiteInfoService{
 	private FileInfoMapper fileInfoMapper;
 
 	@Autowired
-	private FileUtil fileUtil;
-
-	@Autowired
 	private CampsiteImageInfoMapper campsiteImageInfoMapper;
 
 	@Autowired
@@ -45,21 +42,6 @@ public class CampsiteInfoService{
 
 	@Autowired
 	private OperatingMapper operatingMapper;
-
-	@Autowired
-	private CampsiteReviewMapper campsiteReviewMapper;
-
-	@Autowired
-	private MealKitImageInfoMapper mealKitImageInfoMapper;
-
-	@Autowired
-	private RestaurantImageInfoMapper restaurantImageInfoMapper;
-
-	@Autowired
-	private RoomImageInfoMapper roomImageInfoMapper;
-
-	@Autowired
-	private TouristImageInfoMapper touristImageInfoMapper;
 
 	@Transactional(readOnly = true)
 	public CampsiteDto getCampsiteInfoByCampsiteId(int CampsiteId){

@@ -7,7 +7,6 @@ import com.smu.camping.dto.reservation.MealKitOrderDto;
 import com.smu.camping.mapper.campsite.MealKitMapper;
 import com.smu.camping.mapper.campsite.imageInfoMapper.MealKitImageInfoMapper;
 import com.smu.camping.mapper.file.FileInfoMapper;
-import com.smu.camping.util.FileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,9 +23,6 @@ public class MealKitService{
 	
 	@Autowired
 	private FileInfoMapper fileInfoMapper;
-	
-	@Autowired
-	private FileUtil fileUtil;
 
 	@Transactional(readOnly = true)
 	public MealKitDto getMealKit(int mealKitId){

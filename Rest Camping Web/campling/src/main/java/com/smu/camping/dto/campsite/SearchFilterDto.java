@@ -1,7 +1,7 @@
 package com.smu.camping.dto.campsite;
 
 import lombok.*;
-import java.util.Collection;
+
 import java.util.List;
 
 @Getter

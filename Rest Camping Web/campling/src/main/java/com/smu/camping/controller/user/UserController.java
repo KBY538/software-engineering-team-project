@@ -39,7 +39,7 @@ public class UserController {
 
 			userDto.setPassword(encodedPassword);
 
-			int createCnt = userService.createNewUser(userDto);
+			int createCnt = userService.createUser(userDto);
 
 			return (createCnt == 1) ? new ApiResponse(false, "") : new ApiResponse(true, SIGN_UP_FAIL);
 		}else{

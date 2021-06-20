@@ -5,15 +5,10 @@ import com.smu.camping.dto.campsite.MealKitDto;
 import com.smu.camping.dto.campsite.RoomDto;
 import com.smu.camping.dto.reservation.MealKitOrderDto;
 import com.smu.camping.dto.reservation.ReservationDto;
-import com.smu.camping.mapper.campsite.CampsiteInfoMapper;
-import com.smu.camping.mapper.campsite.MealKitMapper;
-import com.smu.camping.mapper.campsite.RoomMapper;
 import com.smu.camping.mapper.reservation.ReservationMapper;
-import com.smu.camping.mapper.user.UserMapper;
 import com.smu.camping.service.campsite.CampsiteInfoService;
 import com.smu.camping.service.campsite.MealKitService;
 import com.smu.camping.service.campsite.RoomService;
-import com.smu.camping.service.user.UserService;
 import com.smu.camping.util.CalendarUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,20 +20,16 @@ import java.util.List;
 @Service
 public class ReservationService {
 	@Autowired
+	private ReservationMapper reservationMapper;
+
+	@Autowired
 	private CampsiteInfoService campsiteService;
 
 	@Autowired
 	private MealKitService mealKitService;
 
 	@Autowired
-	private ReservationMapper reservationMapper;
-
-	@Autowired
 	private RoomService roomService;
-
-	@Autowired
-	private UserService userService;
-
 
 	@Transactional(readOnly = true)
 	public int getTotalCost(ReservationDto reservationDto){
@@ -87,6 +78,14 @@ public class ReservationService {
 		return createCnt;
 	}
 
+	public int deleteReservation(int reservationId){
+		return reservationMapper.deleteReservation(reservationId);
+	}
+
+	public int updateReservation(ReservationDto reservationDto){
+		return reservationMapper.updateReservation(reservationDto);
+	}
+
 	@Transactional(readOnly = true)
 	public ReservationDto getReservationByReservationId(int reservationId){
 		ReservationDto reservationDto = reservationMapper.getReservationByReservationId(reservationId);
@@ -111,6 +110,20 @@ public class ReservationService {
 	}
 
 	@Transactional(readOnly = true)
+	public List<ReservationDto> getReservationByUsername(String username){
+		List<ReservationDto> camperReservationInfos = reservationMapper.getReservationByUsername(username);
+
+		for (ReservationDto reservationDto : camperReservationInfos){
+			int roomId = reservationDto.getRoomDto().getId();
+			int campsiteId = reservationDto.getCampsiteDto().getId();
+			reservationDto.setCampsiteDto(campsiteService.getCampsiteInfoByCampsiteId(campsiteId));
+			reservationDto.setRoomDto(roomService.getRoomByRoomId(roomId));
+		}
+
+		return camperReservationInfos;
+	}
+
+	@Transactional(readOnly = true)
 	public List<ReservationDto> getReservationByOwner(String owner){
 		CampsiteDto campsiteDto = campsiteService.getCampsiteInfoByUserName(owner);
 		if(campsiteDto != null){
@@ -130,28 +143,6 @@ public class ReservationService {
 	@Transactional(readOnly = true)
 	public List<ReservationDto> getReservationByCampsiteId(int campsiteId){
 		return reservationMapper.getReservationByCampsiteId(campsiteId);
-	}
-
-	@Transactional(readOnly = true)
-	public List<ReservationDto> getReservationByUsername(String username){
-		List<ReservationDto> camperReservationInfos = reservationMapper.getReservationByUsername(username);
-
-		for (ReservationDto reservationDto : camperReservationInfos){
-			int roomId = reservationDto.getRoomDto().getId();
-			int campsiteId = reservationDto.getCampsiteDto().getId();
-			reservationDto.setCampsiteDto(campsiteService.getCampsiteInfoByCampsiteId(campsiteId));
-			reservationDto.setRoomDto(roomService.getRoomByRoomId(roomId));
-		}
-
-		return camperReservationInfos;
-	}
-
-	public int deleteReservation(int reservationId){
-		return reservationMapper.deleteReservation(reservationId);
-	}
-
-	public int updateReservation(ReservationDto reservationDto){
-		return reservationMapper.updateReservation(reservationDto);
 	}
 
 /*

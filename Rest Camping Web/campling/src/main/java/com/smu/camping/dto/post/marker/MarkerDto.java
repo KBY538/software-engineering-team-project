@@ -2,6 +2,7 @@ package com.smu.camping.dto.post.marker;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
+
 import java.util.Date;
 
 @Getter

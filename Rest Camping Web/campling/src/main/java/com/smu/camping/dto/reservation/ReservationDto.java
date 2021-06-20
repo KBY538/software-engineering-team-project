@@ -3,7 +3,6 @@ package com.smu.camping.dto.reservation;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.smu.camping.dto.campsite.CampsiteDto;
 import com.smu.camping.dto.campsite.RoomDto;
-import com.smu.camping.dto.user.UserDto;
 import lombok.*;
 
 import java.util.Date;

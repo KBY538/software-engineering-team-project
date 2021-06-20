@@ -1,5 +1,4 @@
 $(".campsite-approve").on("click", (event) => {
-    console.log("asd")
     const campsiteId = $(event.target).closest(".campsite-info").data("label")
 
     $.ajax({
