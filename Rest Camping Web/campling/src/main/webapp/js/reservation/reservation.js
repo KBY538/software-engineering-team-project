@@ -25,6 +25,19 @@ $(".up, .down").on("click", (event) => {
 $(".reservation-btn").on("click", () => {
     const reservationInfo = getReservationInfo();
 
+    const maxHeadCnt = $(".room-max-head-cnt").text();
+    console.log()
+
+    if(reservationInfo.reservationHeadCnt == 0 || !reservationInfo.bookerPhoneNum || !reservationInfo.bookerName){
+        swalAlert({icon : "error", html : "필수 정보를 모두 입력해주세요."})
+        return;
+    }
+    if(maxHeadCnt < reservationInfo.reservationHeadCnt){
+        swalAlert({icon : "error", html : "예약 인원이 최대 인원보다 높습니다."})
+        return;
+    }
+
+
     $.ajax({
         type : "POST",
         url : "/reservation",

@@ -1,15 +1,17 @@
 $(".cancel").on("click", (event) => {
     const reservationId = $(event.target).closest(".reservation-info").data("label")
-    $.ajax({
-        type : "DELETE",
-        url : `/reservation?reservationId=${reservationId}`,
-        success : (response) => {
-            if(!response.error)
-                swalAlert({icon : "success", html : "취소되었습니다.", preConfirm: () => {window.location.reload()}})
-            else
-                swalAlert({icon : "error", html : response.errorMessage, preConfirm : () => {window.location.reload()}})
-        },
-    })
+    swalConfirm({"icon" : "info", html : "취소하시겠습니까?", preConfirm :  () =>{
+            $.ajax({
+                type : "DELETE",
+                url : `/reservation?reservationId=${reservationId}`,
+                success : (response) => {
+                    if(!response.error)
+                        swalAlert({icon : "success", html : "취소되었습니다.", preConfirm: () => {window.location.reload()}})
+                    else
+                        swalAlert({icon : "error", html : response.errorMessage, preConfirm : () => {window.location.reload()}})
+                },
+            })
+        }})
 })
 
 $(".update").on("click", (event) => {

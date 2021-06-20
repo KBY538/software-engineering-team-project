@@ -103,7 +103,7 @@
                 
                 <span class = "login-form__fail-msg">${signUpFailMsg}</span>
 
-                <button class="login-form__login-btn m-t-30">Sign up</button>
+                <button class="login-form__login-btn m-t-30">가입하기</button>
             </form>
         </div>
     </div>

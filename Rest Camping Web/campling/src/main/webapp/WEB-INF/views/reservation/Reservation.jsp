@@ -67,12 +67,12 @@
                         <div class = "booker-info">
                             <div class = "no-title">
                                 <div class="input-box">
-                                    <div class = "input-label">예약자 이름</div>
+                                    <div class = "input-label">예약자 이름 <span class="necessary">*</span></div>
                                     <input type="text" class = "booker-name">
                                 </div>
 
                                 <div class="input-box">
-                                    <div class = "input-label">전화번호</div>
+                                    <div class = "input-label">전화번호 <span class="necessary">*</span></div>
                                     <input type="text" class = "booker-phone-num">
                                 </div>
                             </div>

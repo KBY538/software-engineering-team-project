@@ -56,7 +56,7 @@ $(".confirm-button").on("click", async () => {
 
     inputs.each((index, input) => {
         if (! input.value){
-            //valid = false
+            valid = false
         }
     })
 

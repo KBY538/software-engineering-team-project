@@ -33,7 +33,7 @@
 
                 <div class="flex-sb-m w-full p-b-40" style="justify-content: center">
                     <div>
-                        <a href="/signUp" class="txt3">Sign Up</a>
+                        <a href="/signUp" class="txt3">회원가입</a>
                     </div>
                 </div>
                 <span class = "login-form__fail-msg p-b-15">${loginFailMsg}</span>
