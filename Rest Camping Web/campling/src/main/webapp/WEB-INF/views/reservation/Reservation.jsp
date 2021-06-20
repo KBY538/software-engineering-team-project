@@ -6,7 +6,7 @@
 <html>
     <head>
         <%@ include file="../common/CommonHead.jsp"%>
-        <link rel="stylesheet" href="/css/campsite/reservation.css">
+        <link rel="stylesheet" href="/css/reservation/reservation.css">
     </head>
     <body>
         <jsp:include page="../common/Nav.jsp">
@@ -63,6 +63,21 @@
                             </div>
                         </div>
 
+                        <div class = "title">예약자 정보</div>
+                        <div class = "booker-info">
+                            <div class = "no-title">
+                                <div class="input-box">
+                                    <div class = "input-label">예약자 이름</div>
+                                    <input type="text" class = "booker-name">
+                                </div>
+
+                                <div class="input-box">
+                                    <div class = "input-label">전화번호</div>
+                                    <input type="text" class = "booker-phone-num">
+                                </div>
+                            </div>
+                        </div>
+
                         <div class = "title">밀키트</div>
                         <div class = "mealkit-infos">
                             <c:forEach items="${campsiteDto.mealKits}" var = "mealKitInfo" varStatus="status">
@@ -96,6 +111,6 @@
         </div>
         <%@ include file="../common/Footer.jsp"%>
         <%@ include file="../common/CommonScript.jsp"%>
-        <script src = "/js/campsite/reservation.js"></script>
+        <script src = "/js/reservation/reservation.js"></script>
     </body>
 </html>

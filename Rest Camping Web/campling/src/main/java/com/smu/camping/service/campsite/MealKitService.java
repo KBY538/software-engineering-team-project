@@ -3,10 +3,11 @@ package com.smu.camping.service.campsite;
 import com.smu.camping.dto.campsite.ImageInfoDto;
 import com.smu.camping.dto.campsite.MealKitDto;
 import com.smu.camping.dto.file.FileInfoDto;
+import com.smu.camping.dto.reservation.MealKitOrderDto;
 import com.smu.camping.mapper.campsite.MealKitMapper;
 import com.smu.camping.mapper.campsite.imageInfoMapper.MealKitImageInfoMapper;
 import com.smu.camping.mapper.file.FileInfoMapper;
-import com.smu.camping.mapper.util.FileUtil;
+import com.smu.camping.util.FileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -62,7 +63,22 @@ public class MealKitService{
 
 		return mealKitDtos;
 	}
+	@Transactional(readOnly = true)
+	public List<MealKitOrderDto> getMealkitOrderByReservationId(int reservationId){
+		return mealKitMapper.getMealkitOrderByReservationId(reservationId);
+	}
 
+	public int createMealKitOrder(List<MealKitOrderDto> mealKitOrderDtos, int reservationId){
+		int createCnt = 0;
+
+		for(MealKitOrderDto mealKitOrderDto : mealKitOrderDtos){
+			mealKitOrderDto.setReservationId(reservationId);
+			System.out.println(mealKitOrderDto);
+			createCnt += mealKitMapper.createMealKitOrder(mealKitOrderDto);
+		}
+
+		return createCnt;
+	}
 /*
 	public int updateMealKits(List<MealKitDto> mealKitDtos, List<MultipartFile> multipartFiles){
 		

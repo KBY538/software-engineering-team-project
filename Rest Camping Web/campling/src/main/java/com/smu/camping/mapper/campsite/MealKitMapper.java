@@ -13,5 +13,6 @@ public interface MealKitMapper {
 	public int deleteMealkit(int mealKitId);
 	public List<MealKitDto> getMealKitByCampsiteId(int campsiteId);
 	public MealKitDto getMealKit(int mealKitId);
-	public List<MealKitOrderDto> getMealKitOrderByReservationId(int reservationId);
+	int createMealKitOrder(MealKitOrderDto mealKitOrderDto);
+	public List<MealKitOrderDto> getMealkitOrderByReservationId(int reservationId);
 }

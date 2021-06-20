@@ -23,10 +23,14 @@ function usernameValidation(username){
     $('.validate-form').on('submit',async function(event){
         event.preventDefault()
         var check = true;
-        let name = $("input[name = 'name']").val()
         let username = $("input[name = 'username']").val()
         let password = $("input[name = 'password']").val()
-        let phoneNum = $("input[name = 'phoneNum']").val()
+        let passwordValidation = $("input[name = 'password-validation']").val()
+
+        if(passwordValidation !== password){
+            swalAlert({icon : "error", html : "비밀번호 일치하지 않습니다."})
+            check = false;
+        }
 
         for(var i=0; i<input.length; i++) {
             if(validate(input[i]) == false){
@@ -55,7 +59,7 @@ function usernameValidation(username){
                 $.ajax({
                     url : "/signUp",
                     type : "POST",
-                    data : {name : name, username : username, password : password, phoneNum : phoneNum},
+                    data : {username : username, password : password},
                     success : function (response){
                         if(!response.error){
                             swalAlert({icon : "success",

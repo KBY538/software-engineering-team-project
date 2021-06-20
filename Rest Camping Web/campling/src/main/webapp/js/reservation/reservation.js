@@ -3,6 +3,7 @@
         const day = $(item).text()
         $(item).text(`${day}일 (${enToKrWeek($(item).data("week"))})`)
     })
+    updateTotalPrice()
 })();
 
 $(".up, .down").on("click", (event) => {
@@ -29,8 +30,11 @@ $(".reservation-btn").on("click", () => {
         url : "/reservation",
         contentType: 'application/json',
         data : JSON.stringify(reservationInfo),
-        success : () => {
-
+        success : (response) => {
+            if(response.error === false){
+                const reservationId = response.result.id;
+                window.location.href = `/reservation/confirm/${reservationId}`
+            }
         }
     })
 })
@@ -43,14 +47,18 @@ function getReservationInfo(){
     const reservationHeadCnt = $(".reservation-head-cnt").text();
     const reservationCarCnt = $(".reservation-car-cnt").text();
     const mealKitOrders = []
+    const bookerPhoneNum = $(".booker-phone-num").val()
+    const bookerName = $(".booker-name").val()
 
     $(".mealkit-info").each((index, item) => {
         const mealkitId = $(item).data("label")
         const mealkitCnt = $(item).find(".mealkit-cnt").text()
-        mealKitOrders.push({cnt : mealkitCnt, mealKit : {id : mealkitId}})
+        mealKitOrders.push({cnt : Number(mealkitCnt), mealKit : {id : mealkitId}})
     })
 
     return {
+        bookerName : bookerName,
+        bookerPhoneNum : bookerPhoneNum,
         checkInDate : checkInDate,
         checkOutDate : checkOutDate,
         reservationHeadCnt : reservationHeadCnt,

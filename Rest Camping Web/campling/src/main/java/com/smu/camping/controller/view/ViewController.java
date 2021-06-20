@@ -2,9 +2,12 @@ package com.smu.camping.controller.view;
 
 import com.smu.camping.dto.campsite.CampsiteDto;
 import com.smu.camping.dto.campsite.RoomDto;
+import com.smu.camping.dto.reservation.ReservationDto;
 import com.smu.camping.dto.user.CustomUserDetails;
 import com.smu.camping.service.campsite.CampsiteInfoService;
+import com.smu.camping.service.campsite.MealKitService;
 import com.smu.camping.service.campsite.RoomService;
+import com.smu.camping.service.reservation.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.GrantedAuthority;
@@ -27,9 +30,12 @@ public class ViewController {
     @Autowired
     private RoomService roomService;
 
+    @Autowired
+    private ReservationService reservationService;
+
     @ModelAttribute("userInfo")
     public Map<String, String> userInfoModelAttribute(@AuthenticationPrincipal CustomUserDetails userDetails){
-        Map<String, String> infoMap = new HashMap<String, String>();
+        Map<String, String> infoMap = new HashMap<>();
 
         if (userDetails != null){
             String username = userDetails.getUsername();
@@ -95,7 +101,7 @@ public class ViewController {
     @GetMapping("/reservation/{campsiteId}/{roomId}")
     public String reservationPage(ModelMap modelMap,
                                   @PathVariable("campsiteId") int campsiteId, @PathVariable("roomId") int roomId,
-                                  @RequestParam("startDate") @DateTimeFormat(pattern = "yyyy.MM.dd") LocalDate startDate, @RequestParam("endDate") @DateTimeFormat(pattern = "yyyy.MM.dd") LocalDate endDate){
+                                  @RequestParam("startDate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate startDate, @RequestParam("endDate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate endDate){
 
         CampsiteDto campsiteDto = campsiteInfoService.getCampsiteInfoByCampsiteId(campsiteId);
         RoomDto roomDto = roomService.getRoomByRoomId(roomId);
@@ -105,6 +111,15 @@ public class ViewController {
         modelMap.addAttribute("campsiteDto", campsiteDto);
         modelMap.addAttribute("roomDto", roomDto);
 
-        return "/campsite/Reservation";
+        return "reservation/Reservation";
+    }
+
+    @GetMapping("/reservation/confirm/{reservationId}")
+    public String reservationConfirmPage(ModelMap modelMap, @PathVariable("reservationId") int reservationId){
+        ReservationDto reservationDto = reservationService.getReservationByReservationId(reservationId);
+        modelMap.addAttribute("reservationDto", reservationDto);
+
+        System.out.println(reservationDto.getMealKitOrders());
+        return "reservation/Confirm";
     }
 }

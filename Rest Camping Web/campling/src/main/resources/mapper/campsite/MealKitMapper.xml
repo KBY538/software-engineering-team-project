@@ -17,4 +17,26 @@
         FROM mealkit
         WHERE id = #{mealKitId}
     </select>
+
+    <resultMap id="mealKitOrderDto" type="com.smu.camping.dto.reservation.MealKitOrderDto">
+        <id property="id" column="id" />
+        <id property="cnt" column="cnt" />
+        <id property="reservationId" column="reservationId" />
+
+        <association property="mealKit"  javaType="com.smu.camping.dto.campsite.MealKitDto" >
+            <result property="id"  column="mealkitId" />
+        </association>
+    </resultMap>
+
+    <select id = "getMealkitOrderByReservationId" resultMap="mealKitOrderDto">
+        SELECT id, mealkit_id as mealkitId, reservartion_id as reservationId, cnt
+        FROM mealkit_order
+        WHERE reservartion_id = #{reservationId}
+    </select>
+
+    <insert id="createMealKitOrder" keyProperty="id" useGeneratedKeys="true">
+        INSERT
+        INTO mealkit_order(mealkit_id, reservartion_id, cnt)
+        VALUES (#{mealKit.id}, #{reservationId}, #{cnt})
+    </insert>
 </mapper>

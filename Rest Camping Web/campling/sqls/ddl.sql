@@ -3,7 +3,6 @@ CREATE TABLE user
     `name`         VARCHAR(50)    NOT NULL, 
     `username`     VARCHAR(50)    NOT NULL, 
     `password`     TEXT    NOT NULL, 
-    `phone_num`    VARCHAR(50)    NOT NULL, 
     `create_date`  DATE           NOT NULL, 
     CONSTRAINT  PRIMARY KEY (username)
 )ENGINE = InnoDB DEFAULT CHARSET=utf8;
@@ -157,23 +156,32 @@ CREATE TABLE campsite
 CREATE TABLE reservation
 (
     `id`                  INT            NOT NULL    AUTO_INCREMENT, 
-    `room_id`             INT            NULL, 
+    `username`            VARCHAR(50)    NOT NULL, 
+    `room_id`             INT            NOT NULL, 
+	`campsite_id`         INT            NOT NULL, 
     `check_in_date`       DATE           NULL, 
     `check_out_date`      DATE           NULL, 
     `phone_num`           VARCHAR(50)    NULL, 
-    `username`            VARCHAR(50)    NULL, 
-    `campsite_id`         INT            NULL, 
-    `reservationHeadCnt`  INT            NULL, 
-    `reservationNumCars`  INT            NULL, 
-    `totalPrice`          INT            NULL, 
+    `booker`            VARCHAR(50)    NULL, 
+    `reservation_head_cnt`  INT            NULL, 
+    `reservation_num_cars`  INT            NULL, 
+    `total_price`          INT            NULL, 
+    `is_approve`           INT NOT NULL,
     CONSTRAINT PK_reservation PRIMARY KEY (id),
     foreign key (username) references user(username) ON DELETE CASCADE ON UPDATE CASCADE,
-	foreign key (username) references user(username) ON DELETE CASCADE ON UPDATE CASCADE
+	foreign key (room_id) references room(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    foreign key (campsite_id) references campsite(id) ON DELETE CASCADE ON UPDATE CASCADE
 )ENGINE = InnoDB DEFAULT CHARSET=utf8;
 
 
-ALTER TABLE reservation
-    ADD CONSTRAINT FK_reservation_room_id_room_id FOREIGN KEY (room_id)
-        REFERENCES room (id) ON DELETE RESTRICT ON UPDATE RESTRICT;
-        
-        
+
+CREATE TABLE mealkit_order
+(
+    `id`               INT    NOT NULL    AUTO_INCREMENT, 
+    `mealkit_id`       INT    NOT NULL, 
+    `reservartion_id`  INT    NOT NULL, 
+    `cnt`              INT    NOT NULL, 
+    foreign key (mealkit_id) references mealkit(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    foreign key (reservartion_id) references reservation(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT  PRIMARY KEY (id)
+);

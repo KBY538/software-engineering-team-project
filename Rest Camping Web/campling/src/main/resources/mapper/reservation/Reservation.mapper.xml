@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.smu.camping.mapper.reservation.ReservationMapper">
-    <insert id = "createReservation">
 
+    <resultMap id="reservationDto" type="com.smu.camping.dto.reservation.ReservationDto">
+        <id property="id" column="id" />
+        <id property="username" column="username" />
+        <id property="bookerName" column="bookerName" />
+        <id property="bookerPhoneNum" column="bookerPhoneNum" />
+        <id property="checkInDate" column="checkInDate" />
+        <id property="checkOutDate" column="checkOutDate" />
+        <id property="isApprove" column="isApprove" />
+        <id property="reservationHeadCnt" column="reservationHeadCnt" />
+        <id property="reservationNumCars" column="reservationNumCars" />
+        <id property="totalPrice" column="totalPrice" />
+
+        <association property="roomDto"  javaType="com.smu.camping.dto.campsite.RoomDto" >
+            <result property="id"  column="roomId" />
+        </association>
+        <association property="campsiteDto"  javaType="com.smu.camping.dto.campsite.CampsiteDto" >
+            <result property="id"  column="campsiteId" />
+        </association>
+    </resultMap>
+
+    <insert id = "createReservation" keyProperty="id" useGeneratedKeys="true">
+        INSERT
+        INTO reservation(id, username, room_id, campsite_id, check_in_date, check_out_date, phone_num, booker, reservation_head_cnt, reservation_num_cars, total_price, is_approve)
+        VALUES (#{id}, #{username}, #{roomDto.id}, #{campsiteDto.id}, #{checkInDate}, #{checkOutDate}, #{bookerPhoneNum}, #{bookerName}, #{reservationHeadCnt}, #{reservationNumCars}, #{totalPrice}, 0)
     </insert>
+
+    <select id="getReservationByReservationId" resultMap="reservationDto">
+        SELECT id, username, room_id as roomId, campsite_id as campsiteId, check_in_date as checkInDate, check_out_date as checkOutDate, phone_num as bookerPhoneNum, booker as bookerName,
+               reservation_head_cnt as reservationHeadCnt, reservation_num_cars as reservationNumCars, total_price as totalPrice, is_approve as isApprove
+        FROM reservation
+        WHERE id = #{id}
+    </select>
 </mapper>

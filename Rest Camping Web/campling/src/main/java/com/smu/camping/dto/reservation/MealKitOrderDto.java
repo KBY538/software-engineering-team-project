@@ -9,6 +9,8 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MealKitOrderDto {
+    private int id;
     private int cnt;
+    private int reservationId;
     private MealKitDto mealKit;
 }

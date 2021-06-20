@@ -2,19 +2,16 @@ package com.smu.camping.service.campsite;
 
 import com.smu.camping.dto.campsite.ImageInfoDto;
 import com.smu.camping.dto.campsite.RestaurantDto;
-import com.smu.camping.dto.campsite.RoomDto;
 import com.smu.camping.dto.file.FileInfoDto;
 import com.smu.camping.mapper.campsite.RestaurantMapper;
 import com.smu.camping.mapper.campsite.imageInfoMapper.RestaurantImageInfoMapper;
 import com.smu.camping.mapper.file.FileInfoMapper;
 
-import com.smu.camping.mapper.util.FileUtil;
+import com.smu.camping.util.FileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
 import java.util.List;
 
 @Service

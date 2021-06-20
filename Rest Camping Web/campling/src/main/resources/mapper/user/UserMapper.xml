@@ -3,29 +3,23 @@
 
 <mapper namespace="com.smu.camping.mapper.user.UserMapper">
     <select id = "getUserInfoByUsername" resultType="com.smu.camping.dto.user.UserDto">
-        SELECT name, username, password, phone_num, create_date
+        SELECT username, password, create_date
         FROM user
         WHERE username = #{username};
     </select>
 
     <select id = "getAllUserInfo" resultType="com.smu.camping.dto.user.UserDto">
-        SELECT name, username, password, phone_num, create_date
+        SELECT username, password, create_date
         FROM user
     </select>
 
     <insert id="createUserInfo">
-        INSERT INTO user (name, username, password, phone_num, create_date)
-        VALUES (#{name}, #{username}, #{password}, #{phoneNum}, NOW());
+        INSERT INTO user (username, password, create_date)
+        VALUES (#{username}, #{password}, NOW());
     </insert>
 
     <delete id="deleteUserInfo">
         DELETE FROM user
         WHERE username = #{username};
     </delete>
-
-    <update id = "updateUserInfo">
-        UPDATE user
-        SET name = #{name}, phone_num = #{phoneNum}
-        WHERE username = #{username};
-    </update>
 </mapper>

@@ -16,6 +16,9 @@ import java.util.List;
 @AllArgsConstructor
 public class ReservationDto {
     private int id;
+    private String username;
+    private String bookerName;
+    private String bookerPhoneNum;
 
     @JsonFormat(pattern = "yyyy-MM-dd", timezone = "Asia/Seoul")
     private Date checkInDate;
@@ -28,7 +31,6 @@ public class ReservationDto {
     private int reservationNumCars;
     
     private List<MealKitOrderDto> mealKitOrders;
-    private UserDto booker;
     private RoomDto roomDto;
     private CampsiteDto campsiteDto;
     
