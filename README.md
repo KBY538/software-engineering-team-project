@@ -53,9 +53,7 @@ https://github.com/SMU-EB0055/SE2021_HAEA0008_2
 (2021/06/21) [v2.02](https://github.com/KBY538/software-engineering-team-project/blob/main/%EB%AA%85%EC%84%B8%EC%84%9C/docx/%EB%8F%85%EA%B0%95%EC%A1%B0_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD_%EB%AA%85%EC%84%B8%EC%84%9C_v2.02.docx) /1.로그인 중복 로그인 예외 흐름 제거, 
 2. 회원가입 비밀번호 일치 여부 예외 흐름 추가, 
 3. 로그아웃 후, 화면을 로그인 화면으로 수정
-4. 화면 기술 수정(회원가입, 캠핑장 정보 확인, 예약 화면)
-  
-  /
+4. 화면 기술 수정(회원가입, 캠핑장 정보 확인, 예약 화면) /길민호  
 
 ### 프로젝트 계획서 [latest](https://github.com/KBY538/software-engineering-team-project/blob/main/%EA%B3%84%ED%9A%8D%EC%84%9C/%EB%8F%85%EA%B0%95%EC%A1%B0_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EA%B3%84%ED%9A%8D%EC%84%9C_v2.01.doc)
 (2021/04/16)	[v1.01](https://github.com/KBY538/software-engineering-team-project/blob/main/%EA%B3%84%ED%9A%8D%EC%84%9C/%EB%8F%85%EA%B0%95%EC%A1%B0_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EA%B3%84%ED%9A%8D%EC%84%9C_v1.01.doc)	/초안	/길민호, 김부용, 김채민, 이하임  
@@ -67,3 +65,29 @@ https://github.com/SMU-EB0055/SE2021_HAEA0008_2
 ### 클래스 설계서 [latest](https://github.com/KBY538/software-engineering-team-project/blob/main/%EC%84%A4%EA%B3%84%EC%84%9C/%EB%8F%85%EA%B0%95%EC%A1%B0_Class%20Design/%ED%81%B4%EB%9E%98%EC%8A%A4%20%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8/v.1.02/%EB%8F%85%EA%B0%95%EC%A1%B0_Class%20Design_v1.02.pdf)
 (2021/05/31) [v1.01](https://github.com/KBY538/software-engineering-team-project/blob/main/%EC%84%A4%EA%B3%84%EC%84%9C/%EB%8F%85%EA%B0%95%EC%A1%B0_Class%20Design/%ED%81%B4%EB%9E%98%EC%8A%A4%20%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8/v1.01/%EB%8F%85%EA%B0%95%EC%A1%B0_Class%20Design_v1.01.pdf)	/초안	/길민호, 김부용, 김채민, 이하임  
 (2021/06/21) [v1.02](https://github.com/KBY538/software-engineering-team-project/blob/main/%EC%84%A4%EA%B3%84%EC%84%9C/%EB%8F%85%EA%B0%95%EC%A1%B0_Class%20Design/%ED%81%B4%EB%9E%98%EC%8A%A4%20%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8/v.1.02/%EB%8F%85%EA%B0%95%EC%A1%B0_Class%20Design_v1.02.pdf) /구현 도중 설계 변경 반영 /길민호, 이하임, 김부용  
+
+### 회의록
+[#1](https://github.com/KBY538/software-engineering-team-project/blob/main/%ED%9A%8C%EC%9D%98%EB%A1%9D/%EB%8F%85%EA%B0%95%EC%A1%B0_1%ED%9A%8C%EC%B0%A8_%ED%9A%8C%EC%9D%98%EB%A1%9D.docx) 
+[#2](https://github.com/KBY538/software-engineering-team-project/blob/main/%ED%9A%8C%EC%9D%98%EB%A1%9D/%EB%8F%85%EA%B0%95%EC%A1%B0_2%ED%9A%8C%EC%B0%A8_%ED%9A%8C%EC%9D%98%EB%A1%9D.docx) 
+[#3](https://github.com/KBY538/software-engineering-team-project/blob/main/%ED%9A%8C%EC%9D%98%EB%A1%9D/%EB%8F%85%EA%B0%95%EC%A1%B0_3%ED%9A%8C%EC%B0%A8_%ED%9A%8C%EC%9D%98%EB%A1%9D.docx) 
+[#4](https://github.com/KBY538/software-engineering-team-project/blob/main/%ED%9A%8C%EC%9D%98%EB%A1%9D/%EB%8F%85%EA%B0%95%EC%A1%B0_4%ED%9A%8C%EC%B0%A8_%ED%9A%8C%EC%9D%98%EB%A1%9D.docx) 
+[#5](https://github.com/KBY538/software-engineering-team-project/blob/main/%ED%9A%8C%EC%9D%98%EB%A1%9D/%EB%8F%85%EA%B0%95%EC%A1%B0_5%ED%9A%8C%EC%B0%A8_%ED%9A%8C%EC%9D%98%EB%A1%9D.docx) 
+[#6](https://github.com/KBY538/software-engineering-team-project/blob/main/%ED%9A%8C%EC%9D%98%EB%A1%9D/%EB%8F%85%EA%B0%95%EC%A1%B0_6%ED%9A%8C%EC%B0%A8_%ED%9A%8C%EC%9D%98%EB%A1%9D.docx) 
+[#7](https://github.com/KBY538/software-engineering-team-project/blob/main/%ED%9A%8C%EC%9D%98%EB%A1%9D/%EB%8F%85%EA%B0%95%EC%A1%B0_7%ED%9A%8C%EC%B0%A8_%ED%9A%8C%EC%9D%98%EB%A1%9D.docx) 
+[#8](https://github.com/KBY538/software-engineering-team-project/blob/main/%ED%9A%8C%EC%9D%98%EB%A1%9D/%EB%8F%85%EA%B0%95%EC%A1%B0_8%ED%9A%8C%EC%B0%A8_%ED%9A%8C%EC%9D%98%EB%A1%9D.docx) 
+[#9](https://github.com/KBY538/software-engineering-team-project/blob/main/%ED%9A%8C%EC%9D%98%EB%A1%9D/%EB%8F%85%EA%B0%95%EC%A1%B0_9%ED%9A%8C%EC%B0%A8_%ED%9A%8C%EC%9D%98%EB%A1%9D.docx) 
+[#10](https://github.com/KBY538/software-engineering-team-project/blob/main/%ED%9A%8C%EC%9D%98%EB%A1%9D/%EB%8F%85%EA%B0%95%EC%A1%B0_10%ED%9A%8C%EC%B0%A8_%ED%9A%8C%EC%9D%98%EB%A1%9D.docx) 
+[#11](https://github.com/KBY538/software-engineering-team-project/blob/main/%ED%9A%8C%EC%9D%98%EB%A1%9D/%EB%8F%85%EA%B0%95%EC%A1%B0_11%ED%9A%8C%EC%B0%A8_%ED%9A%8C%EC%9D%98%EB%A1%9D.docx) 
+[#12](https://github.com/KBY538/software-engineering-team-project/blob/main/%ED%9A%8C%EC%9D%98%EB%A1%9D/%EB%8F%85%EA%B0%95%EC%A1%B0_12%ED%9A%8C%EC%B0%A8_%ED%9A%8C%EC%9D%98%EB%A1%9D.docx) 
+[#13](https://github.com/KBY538/software-engineering-team-project/blob/main/%ED%9A%8C%EC%9D%98%EB%A1%9D/%EB%8F%85%EA%B0%95%EC%A1%B0_13%ED%9A%8C%EC%B0%A8_%ED%9A%8C%EC%9D%98%EB%A1%9D.docx) 
+[#14](https://github.com/KBY538/software-engineering-team-project/blob/main/%ED%9A%8C%EC%9D%98%EB%A1%9D/%EB%8F%85%EA%B0%95%EC%A1%B0_14%ED%9A%8C%EC%B0%A8_%ED%9A%8C%EC%9D%98%EB%A1%9D.docx) 
+[#15](https://github.com/KBY538/software-engineering-team-project/blob/main/%ED%9A%8C%EC%9D%98%EB%A1%9D/%EB%8F%85%EA%B0%95%EC%A1%B0_15%ED%9A%8C%EC%B0%A8_%ED%9A%8C%EC%9D%98%EB%A1%9D.docx) 
+[#16](https://github.com/KBY538/software-engineering-team-project/blob/main/%ED%9A%8C%EC%9D%98%EB%A1%9D/%EB%8F%85%EA%B0%95%EC%A1%B0_16%ED%9A%8C%EC%B0%A8_%ED%9A%8C%EC%9D%98%EB%A1%9D.docx) 
+[#17](https://github.com/KBY538/software-engineering-team-project/blob/main/%ED%9A%8C%EC%9D%98%EB%A1%9D/%EB%8F%85%EA%B0%95%EC%A1%B0_17%ED%9A%8C%EC%B0%A8_%ED%9A%8C%EC%9D%98%EB%A1%9D.docx) 
+[#18](https://github.com/KBY538/software-engineering-team-project/blob/main/%ED%9A%8C%EC%9D%98%EB%A1%9D/%EB%8F%85%EA%B0%95%EC%A1%B0_18%ED%9A%8C%EC%B0%A8_%ED%9A%8C%EC%9D%98%EB%A1%9D.docx) 
+[#19](https://github.com/KBY538/software-engineering-team-project/blob/main/%ED%9A%8C%EC%9D%98%EB%A1%9D/%EB%8F%85%EA%B0%95%EC%A1%B0_19%ED%9A%8C%EC%B0%A8_%ED%9A%8C%EC%9D%98%EB%A1%9D.docx) 
+[#20](https://github.com/KBY538/software-engineering-team-project/blob/main/%ED%9A%8C%EC%9D%98%EB%A1%9D/%EB%8F%85%EA%B0%95%EC%A1%B0_20%ED%9A%8C%EC%B0%A8_%ED%9A%8C%EC%9D%98%EB%A1%9D.docx) 
+[#21](https://github.com/KBY538/software-engineering-team-project/blob/main/%ED%9A%8C%EC%9D%98%EB%A1%9D/%EB%8F%85%EA%B0%95%EC%A1%B0_21%ED%9A%8C%EC%B0%A8_%ED%9A%8C%EC%9D%98%EB%A1%9D.docx) 
+[#22](https://github.com/KBY538/software-engineering-team-project/blob/main/%ED%9A%8C%EC%9D%98%EB%A1%9D/%EB%8F%85%EA%B0%95%EC%A1%B0_22%ED%9A%8C%EC%B0%A8_%ED%9A%8C%EC%9D%98%EB%A1%9D.docx) 
+[#23](https://github.com/KBY538/software-engineering-team-project/blob/main/%ED%9A%8C%EC%9D%98%EB%A1%9D/%EB%8F%85%EA%B0%95%EC%A1%B0_23%ED%9A%8C%EC%B0%A8_%ED%9A%8C%EC%9D%98%EB%A1%9D.docx) 
+[#24](https://github.com/KBY538/software-engineering-team-project/blob/main/%ED%9A%8C%EC%9D%98%EB%A1%9D/%EB%8F%85%EA%B0%95%EC%A1%B0_24%ED%9A%8C%EC%B0%A8_%ED%9A%8C%EC%9D%98%EB%A1%9D.docx) 
