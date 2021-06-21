@@ -8,7 +8,7 @@
 [프로젝트 중간 발표 자료](https://github.com/KBY538/software-engineering-team-project/blob/main/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%A4%91%EA%B0%84%EB%B0%9C%ED%91%9C/%EB%8F%85%EA%B0%95%EC%A1%B0_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%A4%91%EA%B0%84%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C.pdf)
 
 ## 프로젝트 최종 발표 영상
-[![SE_210621_프로젝트_최종발표_독강조](https://youtu.be/85UdhKNJ91A) 
+[![SE_210621_프로젝트_최종발표_독강조](http://img.youtube.com/vi/85UdhKNJ91A/0.jpg)](https://youtube.com/watch?v=85UdhKNJ91A?t=0s) 
 (<-클릭해주세요)  
 [프로젝트 기말 발표 자료](https://github.com/KBY538/software-engineering-team-project/blob/main/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B8%B0%EB%A7%90%EB%B0%9C%ED%91%9C/%EB%8F%85%EA%B0%95%EC%A1%B0_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B8%B0%EB%A7%90%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C.pdf)
 
