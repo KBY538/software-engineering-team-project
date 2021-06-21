@@ -49,8 +49,8 @@ https://github.com/SMU-EB0055/SE2021_HAEA0008_2
 2. 사용자 분석: 날씨 API, SMS API 제거 & 
 3. 요구사항 분석: 아이디 찾기, 새 비밀번호 설정 제거, 유스케이스 다이어그램 수정, 제거된 API 관련 내용 수정, 아이디 찾기, 새 비밀번호 설정 관련 화면 기술 제거, 게시글 이미지 관련 기능 제거 & 
 4. 비기능 요구사항: 비밀번호 찾기 제거
- /김부용 
- (2021/06/21) [v2.02](https://github.com/KBY538/software-engineering-team-project/blob/main/%EB%AA%85%EC%84%B8%EC%84%9C/docx/%EB%8F%85%EA%B0%95%EC%A1%B0_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD_%EB%AA%85%EC%84%B8%EC%84%9C_v2.02.docx) /1.로그인 중복 로그인 예외 흐름 제거, 
+ /김부용  
+(2021/06/21) [v2.02](https://github.com/KBY538/software-engineering-team-project/blob/main/%EB%AA%85%EC%84%B8%EC%84%9C/docx/%EB%8F%85%EA%B0%95%EC%A1%B0_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD_%EB%AA%85%EC%84%B8%EC%84%9C_v2.02.docx) /1.로그인 중복 로그인 예외 흐름 제거, 
 2. 회원가입 비밀번호 일치 여부 예외 흐름 추가, 
 3. 로그아웃 후, 화면을 로그인 화면으로 수정
 4. 화면 기술 수정(회원가입, 캠핑장 정보 확인, 예약 화면)
@@ -66,4 +66,4 @@ https://github.com/SMU-EB0055/SE2021_HAEA0008_2
 
 ### 클래스 설계서 [latest](https://github.com/KBY538/software-engineering-team-project/blob/main/%EC%84%A4%EA%B3%84%EC%84%9C/%EB%8F%85%EA%B0%95%EC%A1%B0_Class%20Design/%ED%81%B4%EB%9E%98%EC%8A%A4%20%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8/v.1.02/%EB%8F%85%EA%B0%95%EC%A1%B0_Class%20Design_v1.02.pdf)
 (2021/05/31) [v1.01](https://github.com/KBY538/software-engineering-team-project/blob/main/%EC%84%A4%EA%B3%84%EC%84%9C/%EB%8F%85%EA%B0%95%EC%A1%B0_Class%20Design/%ED%81%B4%EB%9E%98%EC%8A%A4%20%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8/v1.01/%EB%8F%85%EA%B0%95%EC%A1%B0_Class%20Design_v1.01.pdf)	/초안	/길민호, 김부용, 김채민, 이하임  
-(2021/06/21) [v1.02](https://github.com/KBY538/software-engineering-team-project/blob/main/%EC%84%A4%EA%B3%84%EC%84%9C/%EB%8F%85%EA%B0%95%EC%A1%B0_Class%20Design/%ED%81%B4%EB%9E%98%EC%8A%A4%20%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8/v.1.02/%EB%8F%85%EA%B0%95%EC%A1%B0_Class%20Design_v1.02.pdf)
+(2021/06/21) [v1.02](https://github.com/KBY538/software-engineering-team-project/blob/main/%EC%84%A4%EA%B3%84%EC%84%9C/%EB%8F%85%EA%B0%95%EC%A1%B0_Class%20Design/%ED%81%B4%EB%9E%98%EC%8A%A4%20%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8/v.1.02/%EB%8F%85%EA%B0%95%EC%A1%B0_Class%20Design_v1.02.pdf) /구현 도중 설계 변경 반영 /길민호, 이하임, 김부용  
