@@ -27,28 +27,29 @@ $(".reservation-btn").on("click", () => {
 
     const maxHeadCnt = $(".room-max-head-cnt").text();
 
+
     if(reservationInfo.reservationHeadCnt == 0 || !reservationInfo.bookerPhoneNum || !reservationInfo.bookerName){
         swalAlert({icon : "error", html : "필수 정보를 모두 입력해주세요."})
         return;
     }
-    if(maxHeadCnt < reservationInfo.reservationHeadCnt){
+    console.log(reservationInfo.reservationHeadCnt, maxHeadCnt)
+
+    if(Number(maxHeadCnt) < Number(reservationInfo.reservationHeadCnt)){
         swalAlert({icon : "error", html : "예약 인원이 최대 인원보다 높습니다."})
-        return;
-    }
-
-
-    $.ajax({
-        type : "POST",
-        url : "/reservation",
-        contentType: 'application/json',
-        data : JSON.stringify(reservationInfo),
-        success : (response) => {
-            if(response.error === false){
-                const reservationId = response.result.id;
-                window.location.href = `/reservation/confirm/${reservationId}`
+    }else{
+        $.ajax({
+            type : "POST",
+            url : "/reservation",
+            contentType: 'application/json',
+            data : JSON.stringify(reservationInfo),
+            success : (response) => {
+                if(response.error === false){
+                    const reservationId = response.result.id;
+                    window.location.href = `/reservation/confirm/${reservationId}`
+                }
             }
-        }
-    })
+        })
+    }
 })
 
 function getReservationInfo(){

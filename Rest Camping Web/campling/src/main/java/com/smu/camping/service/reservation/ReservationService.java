@@ -51,6 +51,7 @@ public class ReservationService {
 		int totalPrice = roomDto.getPrice() * (dateDiff + 1);
 
 		int reservationHeadCnt = reservationDto.getReservationHeadCnt();
+
 		totalPrice += (reservationHeadCnt > baseHeadCnt) ? (reservationHeadCnt - baseHeadCnt) * pricePerExcessPerson : 0;
 		int reservationNumCars = reservationDto.getReservationNumCars();
 		totalPrice += (reservationNumCars > baseNumCars) ? (reservationNumCars - baseNumCars) * pricePerExcessCar : 0;
